@@ -1,0 +1,40 @@
+@import "../../helpers/*"
+
+.card-details
+  font-family Arial, sans-serif
+  max-width 900px
+  &__when
+    margin 50px 0
+    border-bottom 1px solid $grey
+    &-title
+      color $green
+      text-transform uppercase
+      font-size 21px
+      line-height 29px
+      margin-bottom 29px
+      &:last-child
+        margin-bottom 45px
+  &__address
+    margin 50px 0
+    border-bottom 1px solid $grey
+    &-title
+      font-size 21px
+      line-height 29px
+      font-weight bold
+      color $black
+      margin 0 0 29px
+    &-line
+      font-size 21px
+      line-height 29px
+      color $black
+    &-list
+      margin 0 0 45px
+      padding 0 0 0 60px
+      background url("../images/ic_location.svg") 0px 0px no-repeat
+      background-size 42px auto
+      min-height 56px
+  &__copyright
+    margin 50px 0
+    font-size 13px
+    line-height 15px
+    color $dark-grey

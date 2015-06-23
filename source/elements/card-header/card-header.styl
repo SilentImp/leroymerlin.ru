@@ -1,0 +1,34 @@
+@import "../../helpers/*"
+
+.card-header
+  display block
+  width 100%
+  height 320px
+  background $light-grey url('../images/bg.png') 100% 50% no-repeat
+  background-size auto 320px
+  position relative
+  z-index 20000
+  &__card
+    position absolute
+    width 400px
+    height 250px
+    background $white
+    background-position 50% 50%
+    background-repeat no-repeat
+    border-radius 15px
+    box-shadow 0 0 5px 0 rgba($black, .25)
+    &-front
+      top 40px
+      left 50%
+      margin 0 0 0 -610px
+      z-index 2
+      background-image url("../images/card-front.svg")
+      background-size 400px auto
+      background-position -2px 50%
+    &-back
+      top 20px
+      left 50%
+      margin 0 0 0 -230px
+      z-index 1
+      background-image url("../images/card-back.svg")
+      background-size 347px auto

@@ -1,0 +1,42 @@
+@import "../../helpers/*"
+
+.advantages
+  max-width 900px
+  margin 50px 0
+  border-bottom 1px solid $grey
+  &__title
+    title()
+  &__advantage
+    margin 0 0 45px
+    padding 0 0 0 110px
+    position relative
+    &_history
+      background url("../images/ic_history.svg") 7px 0px no-repeat
+      background-size 74px auto
+    &_service
+      background url("../images/ic_garranty.svg") 0px 0px no-repeat
+      background-size 88px auto
+    &_return
+      background url("../images/ic_sendback.svg") 12px 0px no-repeat
+      background-size 64px auto
+    &_time
+      background url("../images/ic_clock.svg") 11px 0px no-repeat
+      background-size 66px auto
+    &-title
+      font-size 21px
+      line-height 24px
+      color $black
+    &-text
+      font-size 16px
+      line-height 22px
+      color $black
+      margin 0 0 22px
+    &-footnote
+      font-size 13px
+      line-height 15px
+      color $dark-grey
+      padding 0 0 0 10px
+      text-indent -10px
+      &:before
+        content "* "
+        color $black

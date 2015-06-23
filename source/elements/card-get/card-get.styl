@@ -1,0 +1,32 @@
+@import "../../helpers/*"
+
+.card-get
+  max-width 900px
+  margin 50px 0
+  border-bottom 1px solid $grey
+  font-family Arial, sans-serif
+  &__title
+    title()
+  &__steps
+    counter-reset: steps-counter;
+  &__step
+    padding 0 0 0 100px
+    margin 0 0 45px
+    position relative
+    color $black
+    font-size 16px
+    line-height 22px
+    &:before
+      content counter(steps-counter)
+      counter-increment steps-counter
+      display block
+      top 2px
+      left 46px
+      position absolute
+      background-color $light-green
+      color $white
+      text-align center
+      line-height 29px
+      height 29px
+      width 29px
+      border-radius 100%

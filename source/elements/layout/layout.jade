@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta( name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    title Леруа Мерлен - Leroy Merlin - Дом для Дома! Официальный сайт
+    link(ref="favicon.ico", rel="shortcut icon", type="image/x-icon")
+    link(rel="stylesheet", href="css/styles.css")
+    script(src="js/modernizr/modernizr.js")
+    script(src="js/jquery/dist/jquery.min.js")
+  body
+    #page-layout
+      .main
+        #head
+          .wrap
+            ul.reset.subsc.left
+              li
+                a(href='/faq/') Вопрос-ответ
+              li
+                a(href='/subscribe/') Подписаться
+            ul.reset.st.right
+              li
+                a(href='/registration.php') Регистрация
+              li.e
+                a.click-show(href='#', data-js-target='top-dropdown-login') Войти
+            .clear
+        #nav
+          .wrap
+            a.logo(rel='no-follow', href='/')
+              img(src='http://leroymerlin.ru/bitrix/templates/lm/i/logo.png', alt='Leroy Merlin', title='Leroy Merlin')
+            #country
+              .selectCountry
+                p.droppable
+                  span Москва и область
+              .dropdown
+                p Выберите свой город
+                ul.reset
+                  li
+                    a(href='/?REGION_ID=34') Москва и область
+                  li
+                    a(href='/?REGION_ID=504') Ростов-на-Дону
+                  li
+                    a(href='/?REGION_ID=505') Краснодар
+                  li
+                    a(href='/?REGION_ID=506') Санкт-Петербург
+                  li
+                    a(href='/?REGION_ID=507') Самара
+                  li
+                    a(href='/?REGION_ID=508') Новосибирск
+                  li
+                    a(href='/?REGION_ID=509') Омск
+                  li
+                    a(href='/?REGION_ID=510') Воронеж
+                  li
+                    a(href='/?REGION_ID=511') Уфа
+                  li
+                    a(href='/?REGION_ID=715') Екатеринбург
+                  li
+                    a(href='/?REGION_ID=716') Волгоград
+                  li
+                    a(href='/?REGION_ID=539') Красноярск
+                  li
+                    a(href='/?REGION_ID=1437') Тверь
+                  li
+                    a(href='/?REGION_ID=1443') Тюмень
+                  li
+                    a(href='/?REGION_ID=1447') Рязань
+                  li
+                    a(href='/?REGION_ID=1448') Казань
+                  li
+                    a(href='/?REGION_ID=2397') Барнаул
+                i
+            .site-mode-toggle
+              span.item.check-cat.active(title='В режиме интернет-магазин отображаются только товары доступные для заказа онлайн.              Для просмотра всех товаров, представленных в магазинах, перейдите в режим каталог') Каталог
+              .toggle(title='В режиме интернет-магазин отображаются только товары доступные для заказа онлайн.              Для просмотра всех товаров, представленных в магазинах, перейдите в режим каталог')
+                .circle.ui-draggable.ui-draggable-handle(title='В режиме интернет-магазин отображаются только товары доступные для заказа онлайн.                Для просмотра всех товаров, представленных в магазинах, перейдите в режим каталог')
+              span.item.check-mar(title='В режиме интернет-магазин отображаются только товары доступные для заказа онлайн.              Для просмотра всех товаров, представленных в магазинах, перейдите в режим каталог') Интернет-магазин
+              form#etumbler(method='POST', action='', style='display:none;')
+                input(type='checkbox', name='ONLY_ESTORE', value='1')
+                | Товары ИЕ
+                input(type='hidden', name='ONLY_ESTORE_ACT', value='1')
+            ul.reset.menu
+              li
+                a(href='/shop/') Магазины
+              li
+                a(href='/service/?all') Услуги
+              li
+                a(href='/advice/') Советы
+            .search
+              form(action='/catalogue/search/')
+                input.ui-autocomplete-input(type='text', value='', name='q', placeholder='Поиск', autocomplete='off', role='textbox', aria-autocomplete='list', aria-haspopup='true')
+                input(type='submit', value='')
+              .clear
+            #shop-list
+              .list.emptyList
+                span.droppable Список покупок
+                .count
+                  span
+                  |  нет товаров
+                .tool.hastooltip
+                  | Что такое список покупок?
+                  span.tooltip001(style='bottom:-110px;')
+                    | Список покупок — это удобное дополнение, с помощью которого Вы можете отложить понравившиеся товары и позже легко их найти
+            #small-basket
+              .smallCart.emptyCart
+                span.droppable Корзина
+                .count
+                  span
+                  |  нет товаров
+              .e-commerce(style='display: block; bottom: 0px;')
+                .inner
+                  ul.links
+                    li
+                      a(href='/basket/how_to_order.php') Как заказать
+                    li
+                      a(href='/basket/how_to_pay.php') Как оплатить
+                    li
+                      a(href='/basket/delivery_msc.php') Доставка
+                    li
+                      a(href='/catalogue/return.php') Возврат товара
+                  a.to_basket(href='/basket/')
+                  .cards
+                    .item
+                      a(onclick="window.open('/bitrix/templates/lm-ishop/vbvhelp.html','Chargeback','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=1,width=450,height=400'); return false;", href='#')
+                        img(src='http://leroymerlin.ru/bitrix/templates/lm/i/pay_cards_variants_01.jpg', alt='')
+                    .item
+                      a(onclick="window.open('/bitrix/templates/lm-ishop/vbvhelp.html','Chargeback','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=1,width=450,height=400'); return false;", href='#')
+                        img(src='http://leroymerlin.ru/bitrix/templates/lm/i/pay_cards_variants_02.jpg', alt='')
+                    .item
+                      a(onclick="window.open('http://www.mastercardbusiness.com/mcbiz/index.jsp?template=/orphans&content=securecodepopup','Chargeback','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=1,width=550,height=380'); return false;", href='#')
+                        img(src='http://leroymerlin.ru/bitrix/templates/lm/i/pay_cards_variants_03.jpg', alt='')
+                    .item
+                      a(onclick="window.open('http://www.mastercardbusiness.com/mcbiz/index.jsp?template=/orphans&content=securecodepopup','Chargeback','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=1,width=550,height=380'); return false;", href='#')
+                        img(src='http://leroymerlin.ru/bitrix/templates/lm/i/pay_cards_variants_04.jpg', alt='')
+            .clear
+        #globalMenu
+          .wrap
+            ul.reset
+              li
+                a(href='/catalogue/stroymaterialy/', title='Стройматериалы')
+                  | Стройматериалы
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Сухие смеси, штукатурки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/suhie_smesi_dlya_ustroystva_polov/') Сухие смеси для устройства полов
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/shtukaturnye_suhie_smesi/') Штукатурные сухие смеси
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/shpaklevki/') Шпаклевки
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/montagnye_suhie_smesi/') Монтажные сухие смеси
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/kley_dlya_plitki/') Клей для плитки
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/suhie_smesi_gruntovki/') Сухие смеси-грунтовки
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/sypuchie_materialy/') Сыпучие материалы
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/modifikatory_i_plastifikatory_betona/') Модификаторы и пластификаторы бетона
+                        li
+                          a(href='/catalogue/stroymaterialy/suhie_smesi_shtukaturki/krasiteli_dlya_betonnyh_smesey_pigmenty/') Красители для бетонных смесей (пигменты)
+                    li
+                      span.title Строительство стен и перегородок
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelstvo_sten_i_peregorodok/gipsokarton/') Гипсокартон
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelstvo_sten_i_peregorodok/profili_mayaki_ugolki/') Профили, маяки, уголки
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelstvo_sten_i_peregorodok/bloki_penobetonnye/') Блоки строительные
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelstvo_sten_i_peregorodok/plity_pazogrebnevye/') Плиты пазогребневые
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelstvo_sten_i_peregorodok/aksessuary_dlya_montaga_peregorodok/') Аксессуары для монтажа перегородок
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelstvo_sten_i_peregorodok/kirpich/') Кирпич
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelstvo_sten_i_peregorodok/steklobloki/') Стеклоблоки
+                    li
+                      span.title Кровля и водосток
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/metallicheskaya_krovlya/') Металлическая кровля
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/sotovyy_polikarbonat/') Сотовый поликарбонат
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/volnistyy_list_ondulin/') Волнистый лист (ондулин)
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/vodostok/') Водосток
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/myagkaya_cherepitsa/') Мягкая черепица
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/naplavlyaemye_materialy/') Рулонная кровля
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/aksessuary_dlya_metallicheskoy_krovli/') Аксессуары для металлической кровли
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/aksessuary_dlya_vodostoka/') Аксессуары для водостока
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/vse_dlya_prozrachnogo_lista/') Все для прозрачного листа
+                        li
+                          a(href='/catalogue/stroymaterialy/krovlya_i_vodostok/aksessuary_dlya_myagkoy_krovli/') Аксессуары для мягкой кровли
+                    li
+                      span.title Изоляционные материалы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/izolyatsionnye_materialy/teplo_i_shumoizolyatsiya/') Тепло- и шумоизоляция
+                        li
+                          a(href='/catalogue/stroymaterialy/izolyatsionnye_materialy/gidroizolyatsiya/') Гидроизоляция
+                        li
+                          a(href='/catalogue/stroymaterialy/izolyatsionnye_materialy/paroizolyatsiya/') Пароизоляция
+                    li
+                      span.title Металлопрокат
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/metalloprokat/armatura_ugolki_truby/') Арматура, уголки, трубы
+                        li
+                          a(href='/catalogue/stroymaterialy/metalloprokat/metallokonstruktsii/') Металлоконструкции
+                    li
+                      span.title Потолки подвесные и аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/potolki_podvesnye_i_aksessuary/obustroystvo_potolkov/') Реечные потолки
+                        li
+                          a(href='/catalogue/stroymaterialy/potolki_podvesnye_i_aksessuary/mineralnye_i_kassetnye_potolki/') Минеральные и кассетные потолки
+                        li
+                          a(href='/catalogue/stroymaterialy/potolki_podvesnye_i_aksessuary/elementy_karkasnoy_podvesnoy_sistemy/') Элементы каркасной подвесной системы
+                        li
+                          a(href='/catalogue/stroymaterialy/potolki_podvesnye_i_aksessuary/aksessuary_dlya_podvesnyh_potolkov/') Комплектующие для реечных потолков
+                    li
+                      span.title Облицовочные материалы, затирки, клеи
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/oblitsovochnye_materialy_zatirki_klei/oblitsovochnye_materialy/') Облицовочные материалы
+                        li
+                          a(href='/catalogue/stroymaterialy/oblitsovochnye_materialy_zatirki_klei/kley_dlya_oblitsovki/') Клей для облицовки
+                        li
+                          a(href='/catalogue/stroymaterialy/oblitsovochnye_materialy_zatirki_klei/aksessuary_dlya_oblitsovochnyh_materialov/') Аксессуары для облицовочных материалов
+                    li
+                      span.title Сайдинг
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/sayding/sayding2/') Сайдинг
+                        li
+                          a(href='/catalogue/stroymaterialy/sayding/aksessuary_dlya_saydinga/') Аксессуары для сайдинга
+                    li
+                      span.title Камины электрические
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/kaminy_elektricheskie/kaminnye_oblitsovki_portaly2/') Каминные облицовки (порталы)
+                        li
+                          a(href='/catalogue/stroymaterialy/kaminy_elektricheskie/ochagi/') Очаги
+                        li
+                          a(href='/catalogue/stroymaterialy/kaminy_elektricheskie/kaminokomplekty/') Каминокомплекты
+                    li
+                      span.title Расходные материалы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/rashodnye_materialy/plenki_stroitelnye/') Пленки строительные
+                        li
+                          a(href='/catalogue/stroymaterialy/rashodnye_materialy/tenty_stroitelnye/') Тенты строительные
+                        li
+                          a(href='/catalogue/stroymaterialy/rashodnye_materialy/meshki_stroitelnye/') Мешки строительные
+                    li
+                      span.title Плитка и дренажные каналы для тротуаров
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/moshchenie_dorog/drenagnye_kanaly/') Дренажные каналы
+                        li
+                          a(href='/catalogue/stroymaterialy/moshchenie_dorog/plitka_trotuarnaya/') Плитка тротуарная
+                        li
+                          a(href='/catalogue/stroymaterialy/moshchenie_dorog/aksessuary_dlya_drenaga/') Аксессуары для дренажа
+                    li
+                      span.title Камины дровяные
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/kaminy_drovyanye/pechi_kaminy/') Печи-камины
+                        li
+                          a(href='/catalogue/stroymaterialy/kaminy_drovyanye/topki/') Топки
+                        li
+                          a(href='/catalogue/stroymaterialy/kaminy_drovyanye/kaminnye_oblitsovki_portaly/') Каминные облицовки (порталы)
+                    li
+                      span.title Строительное оборудование
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelnoe_oborudovanie/betonosmesiteli/') Бетоносмесители
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelnoe_oborudovanie/lestnitsy2/') Лестницы
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelnoe_oborudovanie/vyshki/') Вышки
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelnoe_oborudovanie/tovary_dlya_bezopasnosti_na_stroyke/') Товары для безопасности на стройке
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelnoe_oborudovanie/aksessuary_dlya_vyshek_i_pomostov/') Аксессуары для вышек и помостов
+                    li
+                      span.title Внешняя канализация
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/truby_pvh_dlya_vneshney_kanalizatsii/') Трубы ПВХ для внешней канализации
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/otvody_dlya_vneshney_kanalizatsii/') Отводы для внешней канализации
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/lyuki_smotrovyh_kolodtsev/') Люки смотровых колодцев
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/revizii_dlya_vneshney_kanalizatsii/') Ревизии для внешней канализации
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/troyniki_dlya_vneshney_kanalizatsii/') Тройники для внешней канализации
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/mufty_dlya_vneshney_kanalizatsii/') Муфты для внешней канализации
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/zaglushki_dlya_vneshney_kanalizatsii/') Заглушки для внешней канализации
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/perehody_dlya_vneshney_kanalizatsii/') Переходы для внешней канализации
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/aksessuary_dlya_drenaga2/') Аксессуары для дренажа
+                        li
+                          a(href='/catalogue/stroymaterialy/vneshnyaya_kanalizatsiya/obratnye_klapany_dlya_vneshney_kanalizatsii/') Обратные клапаны для внешней канализации
+                    li
+                      span.title Аксессуары для каминов
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/aksessuary_dlya_kaminov/dymohody2/') Дымоходы
+                        li
+                          a(href='/catalogue/stroymaterialy/aksessuary_dlya_kaminov/sredstva_i_instrument_dlya_uhoda/') Средства и инструмент для ухода
+                    li
+                      span.title Строительная химия
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelnaya_himiya/ochistiteli2/') Очистители
+                        li
+                          a(href='/catalogue/stroymaterialy/stroitelnaya_himiya/stroitelnye_klei_i_germetiki/') Строительные клеи и герметики
+              li
+                a(href='/catalogue/stolyarnye_izdeliya/', title='Столярные изделия')
+                  | Столярные изделия
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Двери
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/dveri_megkomnatnye/') Двери межкомнатные
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/dveri_metallicheskie/') Двери металлические
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/dvernye_korobki/') Дверные коробки
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/profili_otdelochnye_dlya_dverey/') Профили отделочные для дверей
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/peregorodki_megkomnatnye/') Перегородки межкомнатные
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/mehanizmy_dlya_razdvignyh_peregorodok/') Механизмы для раздвижных перегородок
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/dveri_dlya_sauny/') Двери для сауны
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/dveri_pvkh/') Двери ПВХ
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dveri/aksessuary_dlya_vkhodnykh_dverey/') Аксессуары для входных дверей
+                    li
+                      span.title Листовые материалы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/listovye_materialy/plity_osb/') Плиты OSB
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/listovye_materialy/fanera/') Фанера
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/listovye_materialy/plita_dsp/') Плита ДСП
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/listovye_materialy/plity_dvp/') Плиты ДВП
+                    li
+                      span.title Пиломатериалы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/pilomaterialy/bruski/') Бруски
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/pilomaterialy/doska_polovaya/') Доска половая
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/pilomaterialy/doski/') Доски
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/pilomaterialy/reyki/') Рейки
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/pilomaterialy/imitatsiya_brusa/') Имитация бруса
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/pilomaterialy/blok_haus/') Блок хаус
+                    li
+                      span.title Вагонка и отделка стен
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/vagonka_i_otdelka_sten/paneli_pvh/') Панели ПВХ
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/vagonka_i_otdelka_sten/vagonka/') Вагонка
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/vagonka_i_otdelka_sten/paneli_stenovye/') Панели стеновые
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/vagonka_i_otdelka_sten/paneli_mdf/') Панели МДФ
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/vagonka_i_otdelka_sten/profili_otdelochnye_dlya_paneley_pvh/') Отделочные профили
+                    li
+                      span.title Окна и подоконники
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/okna_pvh/') Окна ПВХ
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/podokonniki_plastikovye/') Подоконники пластиковые
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/aksessuary_dlya_okon/') Аксессуары для окон
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/moskitnye_setki/') Москитные сетки
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/okna_derevyannye_so_steklopaketom/') Окна деревянные со стеклопакетом
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/okna_mansardnye/') Окна мансардные
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/steklo/') Стекло
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/okonnye_bloki_i_podokonniki/aksessuary_dlya_podokonnikov/') Аксессуары для подоконников
+                    li
+                      span.title Лестницы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/lestnitsy3/') Лестницы
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/stupenki/') Ступеньки
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/balyasiny/') Балясины
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/lestnitsy_cherdachnye/') Лестницы чердачные
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/perila_poruchni/') Перила, поручни
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/aksessuary_stolyarnye/') Аксессуары
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/tetivy/') Тетивы
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/podstupenki/') Подступенки
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/lestnitsy/stolby_/') Столбы
+                    li
+                      span.title Декоративные элементы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dekorativnye_elementy/ekrany_dlya_radiatorov/') Экраны для радиаторов
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dekorativnye_elementy/polotna_iz_naturalnyh_materialov/') Полотна из натуральных материалов
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/dekorativnye_elementy/arki/') Арки
+                    li
+                      span.title Гаражные ворота
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/stolyarnye_izdeliya/garagnye_vorota/vorota_garagnye_i_aksessuary/') Ворота гаражные и аксессуары
+              li
+                a(href='/catalogue/elektrotovary/', title='Электротовары')
+                  | Электротовары
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Розетки и выключатели
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/rozetki_vstraivaemye_dlya_pomeshcheniy/') Розетки встраиваемые для помещений
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/vyklyuchateli_vstraivaemye_dlya_pomeshcheniy/') Выключатели встраиваемые для помещений
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/ramki_dlya_rozetok_i_vyklyuchateley/') Рамки для розеток и выключателей
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/rozetki_nakladnye_dlya_pomeshcheniy/') Розетки накладные для помещений
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/dimmery/') Диммеры
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/tv_rozetki/') ТВ-розетки
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/podrozetniki/') Подрозетники
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/kompyuternye_rozetki/') Компьютерные розетки
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/vyklyuchateli_nakladnye_dlya_pomeshcheniy/') Выключатели накладные для помещений
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/rozetki_nakladnye_dlya_ulitsy/') Розетки накладные для улицы
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/audio_rozetki/') Аудио-розетки
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/nakladki_dlya_mehanizmov/') Накладки для механизмов
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/telefonnye_rozetki/') Телефонные розетки
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/vyklyuchateli_nakladnye_dlya_ulitsy/') Выключатели накладные для улицы
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/pereklyuchateli/') Переключатели
+                        li
+                          a(href='/catalogue/elektrotovary/rozetki_i_vyklyuchateli/sovmeshchennye_bloki/') Совмещенные блоки
+                    li
+                      span.title Кабель и монтаж
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/silovye_kabeli/') Силовые кабели
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/kabeli_gotovye_spetsialnye/') Кабели готовые специальные
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/kabel_kanaly/') Кабель-каналы
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/raspredelitelnye_i_raspayachnye_korobki/') Распределительные и распаячные коробки
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/truby_gofrirovannye/') Трубы гофрированные
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/homuty_i_styagki_kabelnye/') Хомуты и стяжки кабельные
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/aksessuary_dlya_trub_i_gofrotrub/') Аксессуары для труб и гофротруб
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/izolyatsionnyy_material/') Изоляционный материал
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/zondy_dlya_protyagki_kabelya/') Зонды для протяжки кабеля
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/krepezh_provodov_kabeley/') Крепеж проводов, кабелей
+                        li
+                          a(href='/catalogue/elektrotovary/kabel_i_montag/nakonechniki_gilzy_sizy_zpo/') Наконечники, гильзы, СИЗы, ЗПО
+                    li
+                      span.title Климатические системы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/teplyy_pol/') Теплый пол
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/ventilyatory_vytyagnye/') Вентиляторы вытяжные
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/elektroobogrevateli/') Электрообогреватели
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/ventilyatsionnye_truby/') Вентиляционные трубы
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/konditsionery/') Кондиционеры
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/ventilyatsionnye_reshetki/') Вентиляционные решетки
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/aksessuary_dlya_teplogo_pola/') Аксессуары для теплого пола
+                        li
+                          a(href='/catalogue/elektrotovary/klimaticheskie_sistemy/polotentsesushiteli_elektricheskie/') Полотенцесушители электрические
+                    li
+                      span.title Электрические щиты
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_shchity/avtomaty/') Автоматические выключатели
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_shchity/elektricheskie_shchity_miniboksy/') Электрические щиты, минибоксы
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_shchity/schetchiki_jelektrojenergii/') Счетчики электроэнергии
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_shchity/aksessuary_dlya_shchitov/') Аксессуары для щитов
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_shchity/otvertki_probniki_indikatory_testery/') Отвертки-пробники, индикаторы, тестеры
+                    li
+                      span.title Электрические аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/razemy_klemmy_vilki_shtekery/') Разъемы, клеммы, вилки, штекеры
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/dvoyniki_troyniki_raspredeliteli/') Двойники, тройники, распределители
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/patrony/') Патроны
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/silovye_rozetki_i_vilki/') Силовые розетки и вилки
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/konnektory_kolpachki/') Коннекторы, колпачки
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/perehodniki/') Переходники
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/zaryadnye_ustroystva2/') Зарядные устройства
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/instrument_dlya_zachistki_obzhima/') Инструмент для зачистки, обжима
+                        li
+                          a(href='/catalogue/elektrotovary/elektricheskie_aksessuary/vyklyuchateli_prokhodnye/') Выключатели проходные
+                    li
+                      span.title Осветительные приборы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/osvetitelnye_pribory/fonari/') Фонари
+                    li
+                      span.title Системы контроля и управления
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/sistemy_kontrolya_i_upravleniya/videonablyudenie/') Видеонаблюдение
+                        li
+                          a(href='/catalogue/elektrotovary/sistemy_kontrolya_i_upravleniya/signalizatsiya_dlya_doma/') Сигнализация для дома
+                        li
+                          a(href='/catalogue/elektrotovary/sistemy_kontrolya_i_upravleniya/datchiki_dvizheniya/') Датчики движения
+                        li
+                          a(href='/catalogue/elektrotovary/sistemy_kontrolya_i_upravleniya/sistemy_kontrolya_protechki_vody/') Системы контроля протечки воды
+                        li
+                          a(href='/catalogue/elektrotovary/sistemy_kontrolya_i_upravleniya/videoregistratory/') Видеорегистраторы
+                        li
+                          a(href='/catalogue/elektrotovary/sistemy_kontrolya_i_upravleniya/taymery/') Таймеры
+                        li
+                          a(href='/catalogue/elektrotovary/sistemy_kontrolya_i_upravleniya/meteostantsii/') Метеостанции
+                    li
+                      span.title Звонки и домофоны
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/zvonki_i_domofony/videodomofony/') Видеодомофоны
+                        li
+                          a(href='/catalogue/elektrotovary/zvonki_i_domofony/zvonki_i_aksessuary/') Звонки и аксессуары
+                        li
+                          a(href='/catalogue/elektrotovary/zvonki_i_domofony/audiodomofony/') Аудиодомофоны
+                        li
+                          a(href='/catalogue/elektrotovary/zvonki_i_domofony/komplektuyushchie_dlya_domofonov/') Комплектующие для домофонов
+                    li
+                      span.title Трансформаторы и стабилизаторы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/transformatory_i_stabilizatory/stabilizatory_napryageniya/') Стабилизаторы напряжения
+                        li
+                          a(href='/catalogue/elektrotovary/transformatory_i_stabilizatory/multimetry/') Мультиметры
+                    li
+                      span.title Антенны
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/antenny/antenny_i_antennye_sistemy/') Антенны и антенные системы
+                        li
+                          a(href='/catalogue/elektrotovary/antenny/komplekty_tv/') Комплекты ТВ
+                    li
+                      span.title Удлинители
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/udliniteli/udliniteli_na_katushkah/') Удлинители на катушках
+                        li
+                          a(href='/catalogue/elektrotovary/udliniteli/udliniteli2/') Удлинители
+                        li
+                          a(href='/catalogue/elektrotovary/udliniteli/kolodki/') Колодки
+                        li
+                          a(href='/catalogue/elektrotovary/udliniteli/setevye_filtry/') Сетевые фильтры
+                    li
+                      span.title Обработка воздуха
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/obrabotka_vozduha/sushilki_dlya_ruk/') Сушилки для рук
+                    li
+                      span.title Элементы питания
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/elementy_pitaniya2/akkumulyatory/') Аккумуляторы
+                        li
+                          a(href='/catalogue/elektrotovary/elementy_pitaniya2/batareyki/') Батарейки
+                    li
+                      span.title Автоматика для ворот
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/elektrotovary/avtomatika_dlya_vorot/komplektuyushchie/') Комплектующие
+                        li
+                          a(href='/catalogue/elektrotovary/avtomatika_dlya_vorot/elektroprivody_dlya_vorot/') Электроприводы для ворот
+              li
+                a(href='/catalogue/instrumenty/', title='Инструменты')
+                  | Инструменты
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Электроинструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/shurupoverty/') Шуруповерты
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/perforatory/') Перфораторы
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/pily_tsirkulyarnye/') Пилы циркулярные
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/ugloshlifovalnye_mashiny/') Углошлифовальные машины
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/lobziki/') Лобзики
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/frezery/') Фрезеры
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/instrument_dlya_gravirovki/') Инструмент для гравировки
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/dreli_udarnye/') Дрели ударные
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/elektrorubanki/') Электрорубанки
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/elektronogovki/') Электроножовки
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/lentochnye_shlifovalnye_mashiny/') Ленточные шлифовальные машины
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/ekstsentrikovye_shlifovalnye_mashiny/') Эксцентриковые шлифовальные машины
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/stameski_elektricheskie/')  Стамески электрические
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/tehnicheskie_feny/') Технические фены
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/vibratsionnye_shlifovalnye_mashiny/') Вибрационные шлифовальные машины
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/shtroborezy/') Штроборезы
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/dreli_bezudarnye/') Дрели безударные
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/deltashlifovalnye_mashiny/') Дельташлифовальные машины
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/miksery_i_nizkooborotistye_dreli/') Миксеры
+                        li
+                          a(href='/catalogue/instrumenty/elektroinstrument/gaykoverty/') Гайковерты
+                    li
+                      span.title Оборудование для мастерской
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/moyki_vysokogo_davleniya/') Мойки высокого давления
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/svarochnye_apparaty/') Сварочные аппараты
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/generatory/') Генераторы
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/tortsovochnye_pily/') Торцовочные пилы
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/kompressory/') Компрессоры
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/pylesosy/') Пылесосы
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/tochilnye_stanki/') Точильные станки
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/aksessuary_dlya_svarki/') Аксессуары для сварки
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/aksessuary_dlya_moek_vysokogo_davleniya/') Аксессуары для моек высокого давления
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/pily_otreznye/') Пилы отрезные
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/gorelki_gazovye/') Горелки газовые
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/lampy_payalnye_i_payalniki/') Лампы паяльные и паяльники
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/aksessuary_dlya_kompressorov/') Аксессуары для компрессоров
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/sverlilnye_stanki/') Сверлильные станки
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/pusko_zaryadnye_ustroystva/') Пуско-зарядные устройства
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/aksessuary_dlya_pylesosov/') Аксессуары для пылесосов
+                        li
+                          a(href='/catalogue/instrumenty/oborudovanie_dlya_masterskoy/aksessuary_dlya_generatorov/') Аксессуары для генераторов
+                    li
+                      span.title Аксессуары для электроинструмента
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/sverla_i_bury_poshtuchno/') Сверла и буры - поштучно
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/diski_i_pilki/') Диски и пилки
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/aksessuary_dlya_frezernogo_instrumenta/') Фрезы, зенкеры
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/otreznye_abrazivnye_i_almaznye_diski/') Отрезные абразивные и алмазные диски
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/sverla_i_bury_nabory/') Сверла и буры - наборы
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/nasadki/') Насадки
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/stoyki_dlya_elektroinstrumenta/') Стойки для электроинструмента
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/koronki/') Коронки
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/bity_i_nabory_bit/') Биты и наборы бит
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/akkumulyatory2/') Аккумуляторы
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/aksessuary_dlya_diskovyh_shlifmashin/') Аксессуары для дисковых шлифмашин
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/aksessuary_dlya_ekstsentrikovyh_shlifmashin/') Аксессуары для эксцентриковых шлифмашин
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/zaryadnye_ustroystva_dlya_akkumulyatorov/') Зарядные устройства для аккумуляторов
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/aksessuary_dlya_deltashlifmashin/') Аксессуары для дельташлифмашин
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/aksessuary_dlya_lentochnyh_shlifmashin/') Аксессуары для ленточных шлифмашин
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/napravlyayushchie_dlya_koronok/') Направляющие и кондукторы
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/patrony_dlya_dreley/') Патроны для дрелей
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/zubila_dolota_piki/') Зубила, долота, пики
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/nozhi_dlya_elektricheskikh_rubankov/') Ножи для электрических рубанков
+                        li
+                          a(href='/catalogue/instrumenty/aksessuary_dlya_elektroinstrumenta/prochie_aksessuary/') Прочие аксессуары
+                    li
+                      span.title Спец. инструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/spetsializirovannyy_instrument/instrument_dlya_plitochnyh_rabot/') Инструмент для плиточных работ
+                        li
+                          a(href='/catalogue/instrumenty/spetsializirovannyy_instrument/instrument_dlya_malyarnyh_rabot/') Инструмент для малярных и отделочных работ
+                        li
+                          a(href='/catalogue/instrumenty/spetsializirovannyy_instrument/instrument_dlya_obshchestroitelnykh_rabot/') Инструмент для общестроительных работ
+                        li
+                          a(href='/catalogue/instrumenty/spetsializirovannyy_instrument/instrument_dlya_truboprovodnyh_rabot/') Инструмент для трубопроводных работ
+                        li
+                          a(href='/catalogue/instrumenty/spetsializirovannyy_instrument/pily_po_drugim_materialam/') Пилы по другим материалам
+                        li
+                          a(href='/catalogue/instrumenty/spetsializirovannyy_instrument/instrument_dlja_stekolnyh_rabot/') Инструмент для стекольных работ
+                    li
+                      span.title Организация рабочего места
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/organizatsiya_rabochego_mesta/yashchiki_dlya_instrumenta/') Ящики для инструмента
+                        li
+                          a(href='/catalogue/instrumenty/organizatsiya_rabochego_mesta/stremyanki/') Стремянки
+                        li
+                          a(href='/catalogue/instrumenty/organizatsiya_rabochego_mesta/tiski/') Тиски
+                        li
+                          a(href='/catalogue/instrumenty/organizatsiya_rabochego_mesta/verstaki/') Верстаки
+                        li
+                          a(href='/catalogue/instrumenty/organizatsiya_rabochego_mesta/spetsodegda/') Спецодежда
+                        li
+                          a(href='/catalogue/instrumenty/organizatsiya_rabochego_mesta/polki_paneli/') Полки, панели
+                        li
+                          a(href='/catalogue/instrumenty/organizatsiya_rabochego_mesta/lebedki/') Лебедки
+                    li
+                      span.title Гаечные ключи и отвертки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/nabory_instrumentov/') Наборы инструментов
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/treshchotki/') Трещотки
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/tortsevye_gaechnye_klyuchi_i_golovki/') Торцевые гаечные ключи и головки
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/nabory_klyuchey/') Наборы ключей
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/nabory_otvertok/') Наборы отверток
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/otvertki_so_smennymi_nasadkami/') Отвертки со сменными насадками
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/otvertki_torx/') Отвертки TORX
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/razvodnye_gaechnye_klyuchi/') Разводные гаечные ключи
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/rogkovye_i_nakidnye_gaechnye_klyuchi/') Рожковые и накидные гаечные ключи
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/shestigrannye_klyuchi/') Шестигранные ключи
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/udarnye_impulsnye_otvertki/') Ударные (импульсные) отвертки
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/razvodnye_trubnye_klyuchi/') Разводные трубные ключи
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/kombinirovannye_gaechnye_klyuchi/') Комбинированные гаечные ключи
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/krestovye_otvertki/') Крестовые отвертки
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/shlitsevye_otvertki/') Шлицевые отвертки
+                        li
+                          a(href='/catalogue/instrumenty/gaechnye_klyuchi_i_otvertki/dielektricheskie_otvertki/') Диэлектрические отвертки
+                    li
+                      span.title Измерительно-разметочный инструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/lazernye_urovni/') Лазерные уровни
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/dalnomery_lazernye_i_ultrazvukovye/') Дальномеры лазерные и ультразвуковые
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/gidkostnye_urovni_gidrourovni/') Жидкостные уровни, гидроуровни
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/lineyki_instrument_dlya_izmereniya_uglov/') Линейки, инструмент для измерения углов
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/detektory_obnarugeniya_materialov/') Детекторы обнаружения материалов
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/ruletki_izmeritelnye/') Рулетки измерительные
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/razmetochnyy_instrument_karandashi_markery/') Разметочный инструмент - карандаши, маркеры
+                        li
+                          a(href='/catalogue/instrumenty/izmeritelno_razmetochnyy_instrument/shtativy/') Штативы
+                    li
+                      span.title Деревообрабатывающий инструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/derevoobrabatyvayushchiy_instrument/pily_po_derevu/') Пилы по дереву
+                        li
+                          a(href='/catalogue/instrumenty/derevoobrabatyvayushchiy_instrument/stameski_shtiheli/') Стамески, штихели
+                        li
+                          a(href='/catalogue/instrumenty/derevoobrabatyvayushchiy_instrument/pily_so_stuslom/') Пилы со стуслом
+                        li
+                          a(href='/catalogue/instrumenty/derevoobrabatyvayushchiy_instrument/rubanki_i_zenzubeli_ruchnye/') Рубанки и зензубели ручные
+                        li
+                          a(href='/catalogue/instrumenty/derevoobrabatyvayushchiy_instrument/rashpili/') Рашпили
+                    li
+                      span.title Хозяйственный инструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/hozyaystvennyy_instrument/nogi/') Ножи
+                        li
+                          a(href='/catalogue/instrumenty/hozyaystvennyy_instrument/lezviya_dlya_nogey/') Лезвия для ножей
+                        li
+                          a(href='/catalogue/instrumenty/hozyaystvennyy_instrument/shilo/') Шило
+                    li
+                      span.title Слесарно-монтажный инструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/slesarno_montagnyy_instrument/passatigi_ploskogubtsy_tonkogubtsy/') Пассатижи, плоскогубцы, тонкогубцы
+                        li
+                          a(href='/catalogue/instrumenty/slesarno_montagnyy_instrument/nognitsy_po_metallu/') Ножницы по металлу
+                        li
+                          a(href='/catalogue/instrumenty/slesarno_montagnyy_instrument/bokorezy_kusachki/') Бокорезы, кусачки
+                        li
+                          a(href='/catalogue/instrumenty/slesarno_montagnyy_instrument/kleshchi/') Клещи
+                        li
+                          a(href='/catalogue/instrumenty/slesarno_montagnyy_instrument/dyrokoly/') Дыроколы
+                    li
+                      span.title Фиксирующий инструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/fiksiruyushchiy_instrument/strubtsiny/') Струбцины
+                        li
+                          a(href='/catalogue/instrumenty/fiksiruyushchiy_instrument/steplery/') Степлеры
+                        li
+                          a(href='/catalogue/instrumenty/fiksiruyushchiy_instrument/zaklepochniki/') Заклепочники
+                        li
+                          a(href='/catalogue/instrumenty/fiksiruyushchiy_instrument/termokleevye_pistolety/') Термоклеевые пистолеты
+                        li
+                          a(href='/catalogue/instrumenty/fiksiruyushchiy_instrument/skoby_dlya_steplerov/') Скобы для степлеров
+                        li
+                          a(href='/catalogue/instrumenty/fiksiruyushchiy_instrument/zaklepki2/') Заклепки
+                        li
+                          a(href='/catalogue/instrumenty/fiksiruyushchiy_instrument/stergni_dlya_termokleevyh_pistoletov/') Стержни для термоклеевых пистолетов
+                    li
+                      span.title Расходные материалы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/rashodnye_materialy_2/aksessuary_dlya_shlifovaniya/') Аксессуары для шлифования
+                        li
+                          a(href='/catalogue/instrumenty/rashodnye_materialy_2/aksessuary_dlya_pil/') Аксессуары для пил
+                    li
+                      span.title Пистолеты
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/pistolety/pistolety_dlya_germetika/') Пистолеты для герметика
+                    li
+                      span.title Молотки, киянки, кувалды
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/molotki_kiyanki_kuvaldy/slesarnye_molotki/') Слесарные молотки
+                        li
+                          a(href='/catalogue/instrumenty/molotki_kiyanki_kuvaldy/kuvaldy/') Кувалды
+                        li
+                          a(href='/catalogue/instrumenty/molotki_kiyanki_kuvaldy/molotki_gvozdodery/') Молотки-гвоздодеры
+                        li
+                          a(href='/catalogue/instrumenty/molotki_kiyanki_kuvaldy/spetsialnye_molotki/') Специальные молотки
+                        li
+                          a(href='/catalogue/instrumenty/molotki_kiyanki_kuvaldy/kiyanki/') Киянки
+                        li
+                          a(href='/catalogue/instrumenty/molotki_kiyanki_kuvaldy/zubila_kernery_i_proboyniki/') Зубила, кернеры и пробойники
+                        li
+                          a(href='/catalogue/instrumenty/molotki_kiyanki_kuvaldy/aksessuary/') Аксессуары
+                    li
+                      span.title Металлообрабатывающий инструмент
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/instrumenty/metalloobrabatyvayushchiy_instrument/napilniki/') Напильники
+                        li
+                          a(href='/catalogue/instrumenty/metalloobrabatyvayushchiy_instrument/shchetki/') Щетки
+              li
+                a(href='/catalogue/napolnye_pokrytiya/', title='Напольные покрытия')
+                  | Напольные покрытия
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Декоративные напольные покрытия
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/dekorativnye_napolnye_pokrytiya/laminat/') Ламинат
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/dekorativnye_napolnye_pokrytiya/linoleum/') Линолеум
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/dekorativnye_napolnye_pokrytiya/parketnaya_doska/') Паркетная доска
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/dekorativnye_napolnye_pokrytiya/kovrovye_pokrytiya/') Ковровые покрытия
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/dekorativnye_napolnye_pokrytiya/probkovoe_pokrytie/') Пробковое покрытие
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/dekorativnye_napolnye_pokrytiya/massivnaya_doska/') Массивная доска
+                    li
+                      span.title Ковры и коврики
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/kovry_i_kovriki/kovry/') Ковры
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/kovry_i_kovriki/gryazezashchitnye_pridvernye_kovriki/') Грязезащитные/придверные коврики
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/kovry_i_kovriki/kovrovye_dorogki_dekorativnye_i_utilitarnye_kovriki/') Декоративные коврики
+                    li
+                      span.title Аксессуары для напольных покрытий
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/aksessuary_dlya_napolnyh_pokrytiy/plintusy/') Плинтусы
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/aksessuary_dlya_napolnyh_pokrytiy/porogi/') Пороги
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/aksessuary_dlya_napolnyh_pokrytiy/ugly_dlya_plintusa/') Углы для плинтуса
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/aksessuary_dlya_napolnyh_pokrytiy/krepezh_dlya_porogov_i_plintusov/') Крепеж для порогов и плинтусов
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/aksessuary_dlya_napolnyh_pokrytiy/rozetki_i_kolca_dlia_trub/') Розетки и кольца для труб
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/aksessuary_dlya_napolnyh_pokrytiy/zaglushki_dlya_plintusa/') Заглушки для плинтуса
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/aksessuary_dlya_napolnyh_pokrytiy/soediniteli_dlya_plintusa/') Соединители для плинтуса
+                    li
+                      span.title Средства для укладки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/sredstva_dlya_ukladki/podlogka/') Подложка
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/sredstva_dlya_ukladki/klei_i_germetiki/') Клеи и герметики
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/sredstva_dlya_ukladki/instrument_dlya_ukladki/') Инструмент для укладки
+                    li
+                      span.title Средства по ремонту и уходу
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/sredstva_po_remontu_i_uhodu/sredstva_dlya_restavratsii_i_remonta/') Средства для реставрации и ремонта
+                        li
+                          a(href='/catalogue/napolnye_pokrytiya/sredstva_po_remontu_i_uhodu/ochistiteli/') Очистители
+              li
+                a(href='/catalogue/plitka/', title='Плитка')
+                  | Плитка
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Плитка, камень, мозаика
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/plitka/plitka_kamen_mozaika/plitka_dlya_vannoy/') Плитка для ванной
+                        li
+                          a(href='/catalogue/plitka/plitka_kamen_mozaika/napolnaya_plitka/') Напольная плитка
+                        li
+                          a(href='/catalogue/plitka/plitka_kamen_mozaika/keramogranit/') Керамогранит
+                        li
+                          a(href='/catalogue/plitka/plitka_kamen_mozaika/mozaika/') Мозаика
+                        li
+                          a(href='/catalogue/plitka/plitka_kamen_mozaika/plitka_dlya_kuhni/') Плитка для кухни
+                        li
+                          a(href='/catalogue/plitka/plitka_kamen_mozaika/universalnaya_dekoratsiya/') Универсальная декорация
+                        li
+                          a(href='/catalogue/plitka/plitka_kamen_mozaika/plitka_dlya_stupeney/') Плитка для ступеней
+                    li
+                      span.title Аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/plitka/aksessuary/lyuki_revizionnye/') Люки ревизионные
+                        li
+                          a(href='/catalogue/plitka/aksessuary/profili_dlya_plitki/') Профили для плитки
+                        li
+                          a(href='/catalogue/plitka/aksessuary/plintusi_i_bordurnie_lenti/') Плинтусы и бордюрные ленты
+                        li
+                          a(href='/catalogue/plitka/aksessuary/krestiki/') Крестики
+                        li
+                          a(href='/catalogue/plitka/aksessuary/tovary_dlya_uhoda/') Товары для ухода
+                        li
+                          a(href='/catalogue/plitka/aksessuary/prochee2/') Прочее
+                        li
+                          a(href='/catalogue/plitka/aksessuary/furnitura/') Фурнитура
+                        li
+                          a(href='/catalogue/plitka/aksessuary/protivoskolzyashchie_lenty/') Противоскользящие ленты
+                        li
+                          a(href='/catalogue/plitka/aksessuary/instrumenty_dlya_ukladki/') Инструменты для укладки
+                    li
+                      span.title Затирки и добавки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/plitka/zatirki_i_dobavki/zatirki_tsementnye/') Затирки цементные
+                        li
+                          a(href='/catalogue/plitka/zatirki_i_dobavki/zatirki_epoksidnye/') Затирки эпоксидные
+                        li
+                          a(href='/catalogue/plitka/zatirki_i_dobavki/zatirki_silikonovye/') Затирки силиконовые
+                        li
+                          a(href='/catalogue/plitka/zatirki_i_dobavki/dobavki_k_zatirkam/') Добавки к затиркам
+                    li
+                      span.title Клеи для укладки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/plitka/klei_dlya_ukladki/poroshkoobraznye_klei/') Порошкообразные клеи
+                        li
+                          a(href='/catalogue/plitka/klei_dlya_ukladki/gotovye_klei/') Готовые клеи
+                    li
+                      span.title Подготовка основания
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/plitka/podgotovka_osnovaniya/sredstva_dlya_gidroizolyatsii/') Средства для гидроизоляции
+                        li
+                          a(href='/catalogue/plitka/podgotovka_osnovaniya/gruntovki2/') Грунтовки
+              li
+                a(href='/catalogue/santehnika/', title='Сантехника')
+                  | Сантехника
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Мебель для ванной комнаты
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/tumby_pod_rakovinu/') Тумбы под раковину
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/zerkala_shkafy/') Зеркала-шкафы
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/komplekty_mebeli/') Тумбы с раковинами
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/rakoviny_k_mebeli/') Раковины к мебели
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/penaly/') Пеналы
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/shkafchiki/') Шкафчики
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/polki_podvesnye/') Полки подвесные
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/stellagi_dlya_vannyh_komnat/') Стеллажи для ванных комнат
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/zerkala_k_mebeli/') Зеркала к мебели
+                        li
+                          a(href='/catalogue/santehnika/mebel_dlya_vannoy_komnaty/taburety/') Табуреты
+                    li
+                      span.title Душевые кабины
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/dushevye_kabiny/dushevye_kabiny_s_gidromassagem/') Душевые кабины с гидромассажем
+                        li
+                          a(href='/catalogue/santehnika/dushevye_kabiny/dushevye_kabiny_bez_gidromassaga/') Душевые кабины без гидромассажа
+                        li
+                          a(href='/catalogue/santehnika/dushevye_kabiny/dushevye_shirmy/') Душевые ширмы
+                        li
+                          a(href='/catalogue/santehnika/dushevye_kabiny/dushevye_poddony/') Душевые поддоны
+                        li
+                          a(href='/catalogue/santehnika/dushevye_kabiny/komplektuyushchie_dlya_dushevyh_kabin/') Комплектующие для душевых кабин
+                    li
+                      span.title Ванны
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/vanny2/vanny/') Ванны
+                        li
+                          a(href='/catalogue/santehnika/vanny2/komplektuyushchie_dlya_vann/') Комплектующие для ванн
+                        li
+                          a(href='/catalogue/santehnika/vanny2/shirmy_dlya_vann/') Ширмы для ванн
+                        li
+                          a(href='/catalogue/santehnika/vanny2/gidromassagnye_vanny/') Гидромассажные ванны
+                    li
+                      span.title Санфаянс
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/unitazy/') Унитазы
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/rakoviny/') Раковины
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/komplekty_installyatsiya_unitaz/') Комплекты инсталляция + унитаз
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/installyatsii_dlya_unitazov/') Инсталляции для унитазов
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/bachki_dlya_unitazov/') Бачки для унитазов
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/pedestaly_dlya_rakovin/') Пьедесталы для раковин
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/bide/') Биде
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/knopki_smyva_dlya_instalyatsiy/') Кнопки смыва для инсталяций
+                        li
+                          a(href='/catalogue/santehnika/santehnicheskiy_fayans/pissuary/') Писсуары
+                    li
+                      span.title Смесители
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/smesiteli/smesiteli_dlya_vann/') Смесители для ванн
+                        li
+                          a(href='/catalogue/santehnika/smesiteli/smesiteli_dlya_rakovin/') Смесители для раковин
+                        li
+                          a(href='/catalogue/santehnika/smesiteli/smesiteli_dlya_dusha/') Смесители для душа
+                        li
+                          a(href='/catalogue/santehnika/smesiteli/smesitely_skritogo_montaga/') Смесители скрытого монтажа
+                        li
+                          a(href='/catalogue/santehnika/smesiteli/smesiteli_dlya_bide/') Смесители для биде
+                    li
+                      span.title Душевое оборудование
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/dushevoe_oborudovanie/dushevye_nabory/') Душевые наборы
+                        li
+                          a(href='/catalogue/santehnika/dushevoe_oborudovanie/komplekty_shlang_leyka/') Комплекты Шланг-Лейка
+                        li
+                          a(href='/catalogue/santehnika/dushevoe_oborudovanie/gidromassagnye_paneli/') Гидромассажные панели
+                        li
+                          a(href='/catalogue/santehnika/dushevoe_oborudovanie/leyki/') Лейки
+                        li
+                          a(href='/catalogue/santehnika/dushevoe_oborudovanie/dushevye_shtangi/') Душевые штанги
+                        li
+                          a(href='/catalogue/santehnika/dushevoe_oborudovanie/shlangi/') Шланги
+                        li
+                          a(href='/catalogue/santehnika/dushevoe_oborudovanie/izlivy_dlya_dusha/') Изливы для душа
+                    li
+                      span.title Аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/aksessuary5/podvesnye_aksessuary_dlya_vannoy_komnaty/') Подвесные аксессуары для ванной комнаты
+                        li
+                          a(href='/catalogue/santehnika/aksessuary5/napolnye_aksessuary_dlya_vannoy_komnaty/') Напольные аксессуары для ванной комнаты
+                        li
+                          a(href='/catalogue/santehnika/aksessuary5/nastolnye_aksessuary_dlya_vannoy_komnaty/') Настольные аксессуары для ванной комнаты
+                        li
+                          a(href='/catalogue/santehnika/aksessuary5/bezopasnost_dlya_vannyh_komnat2/') Безопасность для ванных комнат
+                    li
+                      span.title Коврики, шторки, корзины
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/shtorki_dlya_vanny/') Шторки для ванны
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/kovriki_dlya_vannoy_komnaty/') Коврики для ванной комнаты
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/korziny_dlya_belya/') Корзины для белья
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/shtangi_dlya_shtorok/') Штанги для шторок
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/kovriki_dlya_tualeta/') Коврики для туалета
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/musornye_baki/') Мусорные баки
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/meshki_dlja_stirki_belja/') Мешки для стирки белья
+                        li
+                          a(href='/catalogue/santehnika/kovriki_shtorki_korziny/koltsa_dlya_shtorok/') Кольца для шторок
+                    li
+                      span.title Комплектующие для сантехники
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/komplektuyushchie_dlya_santehniki/sidenya_dlya_unitazov/') Сиденья для унитазов
+                        li
+                          a(href='/catalogue/santehnika/komplektuyushchie_dlya_santehniki/aksessuary_dlya_santekhniki/') Аксессуары для сантехники
+                        li
+                          a(href='/catalogue/santehnika/komplektuyushchie_dlya_santehniki/santehnicheskiy_krepeg2/') Сантехнический крепеж
+                        li
+                          a(href='/catalogue/santehnika/komplektuyushchie_dlya_santehniki/bezopasnost_dlya_vannyh_komnat/') Безопасность для ванных комнат
+                        li
+                          a(href='/catalogue/santehnika/komplektuyushchie_dlya_santehniki/aksessuary_dlya_zerkal/') Аксессуары для зеркал
+                        li
+                          a(href='/catalogue/santehnika/komplektuyushchie_dlya_santehniki/armatura_dlya_slivnyh_bachkov_unitazov2/') Арматура для сливных бачков унитазов
+                    li
+                      span.title Зеркала
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/zerkala/zerkala2/') Зеркала
+                        li
+                          a(href='/catalogue/santehnika/zerkala/zerkala_kosmeticheskie/') Зеркала косметические
+                    li
+                      span.title Сушилки для белья
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/sushilki_dlya_belya/nastenno_potolochnye_sushilki/') Настенно-потолочные сушилки
+                        li
+                          a(href='/catalogue/santehnika/sushilki_dlya_belya/napolnye_sushilki/') Напольные сушилки
+                        li
+                          a(href='/catalogue/santehnika/sushilki_dlya_belya/sushilki_raznogo_naznacheniya/') Сушилки разного назначения
+                    li
+                      span.title Сауна
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/sauna/bondarnye_izdeliya/') Бондарные изделия
+                        li
+                          a(href='/catalogue/santehnika/sauna/raznoe/') Разное
+                        li
+                          a(href='/catalogue/santehnika/sauna/izdeliya_iz_voyloka/') Изделия из войлока и фетра
+                        li
+                          a(href='/catalogue/santehnika/sauna/aromaticheskie_sredstva/') Ароматические средства
+                        li
+                          a(href='/catalogue/santehnika/sauna/termometry/') Термометры
+                    li
+                      span.title Биотуалеты
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/santehnika/biotualety/biotualety2/') Биотуалеты
+                        li
+                          a(href='/catalogue/santehnika/biotualety/aksessuary_dlya_biotualetov/') Аксессуары для биотуалетов
+              li
+                a(href='/catalogue/vodosnabgenie/', title='Водоснабжение')
+                  | Водоснабжение
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Трубопровод
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/truby/') Трубы
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/fitingi/') Фитинги
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/zapornaya_armatura/') Запорная арматура
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/pribory_kontrolya_i_ucheta/') Приборы контроля и учета
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/gibkaya_podvodka_voda/') Гибкая подводка — вода
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/kollektory/') Коллекторы
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/zaporno_reguliruyushchaya_armatura/') Запорно-регулирующая арматура
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/shlangi_dlya_stiralnyh_mashin/') Шланги для стиральных машин
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/gibkaya_podvodka_gaz/') Гибкая подводка — газ
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/izolyatsiya_trub/') Изоляция труб
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/uplotnitelnye_prokladki_i_kolca/') Уплотнительные прокладки и кольца
+                        li
+                          a(href='/catalogue/vodosnabgenie/truboprovod/uplotniteli/') Уплотнители
+                    li
+                      span.title Радиаторы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/radiatory_bimetallicheskie/') Радиаторы биметаллические
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/radiatory_alyuminievye/') Радиаторы алюминиевые
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/radiatory_stalnye/') Радиаторы стальные
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/termostaticheskaya_armatura/') Термостатическая арматура
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/teplonositel/') Теплоноситель
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/ekrany_dlya_radiatorov2/') Экраны для радиаторов
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/aksessuary_dlya_radiatorov/') Аксессуары для радиаторов
+                        li
+                          a(href='/catalogue/vodosnabgenie/radiatory/radiatory_chugunnye/') Радиаторы чугунные
+                    li
+                      span.title Водоотведение
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodootvedenie/kanalizatsionnye_truby_dlya_vnutrennego_ispolzovaniya/') Канализационные трубы для внутреннего использования
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodootvedenie/sifony_i_trapy/') Сифоны и трапы
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodootvedenie/armatura_dlya_slivnyh_bachkov_unitazov/') Арматура для сливных бачков унитазов
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodootvedenie/truba_gofrirovannaya/') Труба гофрированная
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodootvedenie/vypuski/') Выпуски
+                    li
+                      span.title Насосы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/nasosy/tsirkulyatsionnye_nasosy/') Циркуляционные насосы
+                        li
+                          a(href='/catalogue/vodosnabgenie/nasosy/vstraivaemye_nasosy_vodootvedeniya/') Встраиваемые насосы водоотведения
+                        li
+                          a(href='/catalogue/vodosnabgenie/nasosy/gidroakkumulyatory/') Гидроаккумуляторы
+                    li
+                      span.title Водонагреватели
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodonagrevateli/elektricheskie_vodonagrevateli_nakopitelnye/') Электрические водонагреватели накопительные
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodonagrevateli/elektricheskie_vodonagrevateli_protochnye/') Электрические водонагреватели проточные
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodonagrevateli/gazovye_vodonagrevateli/') Газовые водонагреватели
+                        li
+                          a(href='/catalogue/vodosnabgenie/vodonagrevateli/elektricheskie_vodonagrevateli_nalivnye/') Электрические водонагреватели наливные
+                    li
+                      span.title Котлы и отопители
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/kotly_i_otopiteli/kotly_otopitelnye_gazovye/') Котлы отопительные газовые
+                        li
+                          a(href='/catalogue/vodosnabgenie/kotly_i_otopiteli/kotly_otopitelnye_tverdotoplivnye/') Котлы отопительные твердотопливные
+                        li
+                          a(href='/catalogue/vodosnabgenie/kotly_i_otopiteli/kotly_otopitelnye_elektricheskie/') Котлы отопительные электрические
+                        li
+                          a(href='/catalogue/vodosnabgenie/kotly_i_otopiteli/otopiteli_avtonomnye/') Отопители автономные
+                        li
+                          a(href='/catalogue/vodosnabgenie/kotly_i_otopiteli/dymohody/') Дымоходы
+                        li
+                          a(href='/catalogue/vodosnabgenie/kotly_i_otopiteli/kotly_otopitelnye_gidkotoplivnye/') Котлы отопительные жидкотопливные
+                        li
+                          a(href='/catalogue/vodosnabgenie/kotly_i_otopiteli/aksessuary_dlya_kotlov_i_otopiteley/') Аксессуары для котлов и отопителей
+                    li
+                      span.title Фильтры для питьевой воды
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/filtry_dlya_pitevoy_vody/filtry_protochnye/') Фильтры проточные
+                        li
+                          a(href='/catalogue/vodosnabgenie/filtry_dlya_pitevoy_vody/filtry_kuvshiny/') Фильтры-кувшины
+                        li
+                          a(href='/catalogue/vodosnabgenie/filtry_dlya_pitevoy_vody/krany_chistoy_vody/') Краны чистой воды
+                    li
+                      span.title Инструмент и аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/instrument_i_aksessuary/instrument/') Инструмент
+                        li
+                          a(href='/catalogue/vodosnabgenie/instrument_i_aksessuary/aksessuary2/') Аксессуары
+                    li
+                      span.title Полотенцесушители
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/polotentsesushiteli/polotentsesushiteli3/') Полотенцесушители
+                    li
+                      span.title Встраиваемые фильтры
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/vstraivaemye_filtry/magistralnye_filtry/') Магистральные фильтры
+                        li
+                          a(href='/catalogue/vodosnabgenie/vstraivaemye_filtry/sistemy_obratnogo_osmosa/') Системы обратного осмоса
+                    li
+                      span.title Фильтры грубой очистки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/filtry_gruboy_ochistki/filtry_gruboy_ochistki2/') Фильтры грубой очистки
+                    li
+                      span.title Аксессуары для фильтров
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/aksessuary_dlya_filtrov/filtruyushchie_elementy_kartridgi/') Фильтрующие элементы (картриджи)
+                        li
+                          a(href='/catalogue/vodosnabgenie/aksessuary_dlya_filtrov/filtruyushchie_materialy_i_khimicheskie_reaktivy/') Фильтрующие материалы и химические реактивы
+                    li
+                      span.title Диспенсеры для бутилированной воды
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/vodosnabgenie/dispensery_dlya_butilirovannoy_vody/kulery_dlya_vody/') Кулеры для воды
+              li
+                a(href='/catalogue/sad/', title='Сад')
+                  | Сад
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Садовая мебель
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/kacheli/') Качели
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/shatry_tenty/') Шатры/тенты
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/nabory_mebeli/') Наборы мебели
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/stoly/') Столы
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/skami/') Скамьи
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/kresla/') Кресла
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/stulya/') Стулья
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/shezlongi/') Шезлонги
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/gamaki/') Гамаки
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/prochee/') Прочее
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/zonty/') Зонты
+                        li
+                          a(href='/catalogue/sad/sadovaya_mebel/aksessuary_dlya_sadovoy_mebeli/') Аксессуары для садовой мебели
+                    li
+                      span.title Растения, рассада, семена, травы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/rasteniya_komnatnye/') Растения комнатные
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/semena_tsvetov/') Семена цветов
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/gazonnye_travy/') Газонные травы
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/semena_ovoshchey/') Семена овощей
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/opory_dlya_rasteniy/') Подвязка и опоры для растений
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/rasteniya_sadovye/') Растения садовые
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/tematicheskaya_literatura/') Тематическая литература
+                        li
+                          a(href='/catalogue/sad/rasteniya_rassada_semena_travy/rassada/') Рассада
+                    li
+                      span.title Садовые ограждения
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/sadovye_ogragdeniya/ogrady_dlya_gryadok_i_klumb/') Ограды для грядок и клумб
+                        li
+                          a(href='/catalogue/sad/sadovye_ogragdeniya/ograditelnye_setki_i_reshetki/') Оградительные сетки и решетки
+                        li
+                          a(href='/catalogue/sad/sadovye_ogragdeniya/vneshnie_zabory/') Внешние заборы
+                        li
+                          a(href='/catalogue/sad/sadovye_ogragdeniya/stolby_dlya_zaborov/') Столбы для заборов
+                        li
+                          a(href='/catalogue/sad/sadovye_ogragdeniya/aksessuary_dlya_zaborov/') Аксессуары для заборов
+                        li
+                          a(href='/catalogue/sad/sadovye_ogragdeniya/pokrytiya_dlya_zaborov/') Покрытия для заборов
+                    li
+                      span.title Обустройство сада
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/obustroystvo_sada/dachnye_tualety_i_dushi/') Дачные туалеты и души
+                        li
+                          a(href='/catalogue/sad/obustroystvo_sada/sadovyy_parket_plitka_i_drugie_pokrytiya/') Садовый паркет, плитка и другие покрытия
+                        li
+                          a(href='/catalogue/sad/obustroystvo_sada/dekorativnye_elementy_2/') Декоративные элементы
+                        li
+                          a(href='/catalogue/sad/obustroystvo_sada/kompostery/') Компостеры
+                        li
+                          a(href='/catalogue/sad/obustroystvo_sada/sredstva_dlya_uborki/') Средства для уборки
+                        li
+                          a(href='/catalogue/sad/obustroystvo_sada/detskie_ploshchadki/') Детские площадки
+                    li
+                      span.title Грунты, уход за растениями, аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/gorshki_dlya_rasteniy/') Горшки для растений
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/grunty/') Грунты
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/ukrytie_dlya_rasteniy/') Укрытие для растений
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/balkonnye_yashchiki_kashpo_vazony/') Балконные ящики, кашпо, вазоны
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/udobreniya/') Удобрения
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/sredstva_zashchity_dlya_sada/') Средства защиты для сада
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/vse_dlya_rassady/') Все для рассады
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/aksessuary_dlya_gorshkov_i_balkonnyh_yashchikov/') Аксессуары для горшков и балконных ящиков
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/termometry_i_drugie_izmeritelnye_pribory/') Термометры и другие измерительные приборы
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/sredstva_zashchity_ot_komarov_muh_kleshchey/') Средства защиты от комаров, мух, клещей
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/poddony_i_blyudtsa_dlya_gorshkov/') Поддоны и блюдца для горшков
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/himicheskie_sredstva_dlya_dachi/') Химические средства для дачи
+                        li
+                          a(href='/catalogue/sad/grunty_uhod_za_rasteniyami_aksessuary/etiketki_i_tablichki_dlya_sada/') Этикетки и таблички для сада
+                    li
+                      span.title Средства для полива
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/shlangi2/') Шланги
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/prochie_aksessuary_dlya_poliva/') Прочие аксессуары для полива
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/konnektory_poliv/') Коннекторы/полив
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/leyki_umyvalniki_vedra_baki/') Лейки, умывальники, ведра, баки
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/opryskivateli_i_aksessuary/') Опрыскиватели и аксессуары
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/dogdevateli/') Дождеватели
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/pistolety_dlya_poliva/') Пистолеты для полива
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/katushki_dlya_shlangov/') Катушки и тележки для шлангов
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/homuty_dlya_shlangov/') Хомуты для шлангов
+                        li
+                          a(href='/catalogue/sad/sredstva_dlya_poliva/kronshteyny_dlya_shlangov/') Кронштейны для шлангов
+                    li
+                      span.title Газонокосилки и триммеры
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/gazonokosilki_i_trimmery/benzinovye_trimmery/') Бензиновые триммеры
+                        li
+                          a(href='/catalogue/sad/gazonokosilki_i_trimmery/elektricheskie_gazonokosilki/') Электрические газонокосилки
+                        li
+                          a(href='/catalogue/sad/gazonokosilki_i_trimmery/elektricheskie_trimmery/') Электрические триммеры
+                        li
+                          a(href='/catalogue/sad/gazonokosilki_i_trimmery/benzinovye_gazonokosilki/') Бензиновые газонокосилки
+                    li
+                      span.title Товары для пикника
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/tovary_dlya_piknika/mangaly_i_grili_statsionarnye/') Мангалы и грили стационарные
+                        li
+                          a(href='/catalogue/sad/tovary_dlya_piknika/mangaly_i_grili_dlya_piknika/') Мангалы и грили для пикника
+                        li
+                          a(href='/catalogue/sad/tovary_dlya_piknika/aksessuary_dlya_mangala/') Аксессуары для мангала
+                        li
+                          a(href='/catalogue/sad/tovary_dlya_piknika/koptilni/') Коптильни
+                        li
+                          a(href='/catalogue/sad/tovary_dlya_piknika/ugol_drova/') Уголь, дрова
+                        li
+                          a(href='/catalogue/sad/tovary_dlya_piknika/sredstva_dlya_rozgiga/') Средства для розжига
+                    li
+                      span.title Обработка почвы/снега
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/obrabotka_pochvy_snega/motokultivatory/') Мотокультиваторы
+                        li
+                          a(href='/catalogue/sad/obrabotka_pochvy_snega/ruchnoy_sadovyy_instrument/') Ручной садовый инструмент
+                        li
+                          a(href='/catalogue/sad/obrabotka_pochvy_snega/motobloki/') Мотоблоки
+                        li
+                          a(href='/catalogue/sad/obrabotka_pochvy_snega/elektrokultivatory/') Электрокультиваторы
+                    li
+                      span.title Насосы и аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/nasosy_i_aksessuary/nasosy_dlya_poliva_i_sozdaniya_sistem_vodosnabgeniya/') Насосы для полива и создания систем водоснабжения
+                        li
+                          a(href='/catalogue/sad/nasosy_i_aksessuary/pogrugnye_drenagnye_nasosy_dlya_vody_chistoy_gryaznoy/') Погружные дренажные насосы для воды (чистой/грязной)
+                        li
+                          a(href='/catalogue/sad/nasosy_i_aksessuary/shlangi_dlya_vody/') Шланги для воды
+                        li
+                          a(href='/catalogue/sad/nasosy_i_aksessuary/fitingi_dlya_nasosov_i_aksessuary/') Фитинги для насосов и аксессуары
+                        li
+                          a(href='/catalogue/sad/nasosy_i_aksessuary/obratnye_klapany_i_aksessuary/') Обратные клапаны и аксессуары
+                        li
+                          a(href='/catalogue/sad/nasosy_i_aksessuary/motopompy/') Мотопомпы
+                    li
+                      span.title Универсальная техника
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/universalnaya_tehnika/transportirovka_tachki/') Транспортировка, тачки
+                        li
+                          a(href='/catalogue/sad/universalnaya_tehnika/sadovye_izmelchiteli/') Садовые измельчители
+                        li
+                          a(href='/catalogue/sad/universalnaya_tehnika/aeratory_i_skarifikatory/') Аэраторы и скарификаторы
+                        li
+                          a(href='/catalogue/sad/universalnaya_tehnika/sadovye_pylesosy/') Садовые пылесосы
+                    li
+                      span.title Топоры, подрезка сучьев, деревьев
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/pily_tsepnye_benzinovye/') Пилы цепные бензиновые
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/pily_tsepnye_elektricheskie/') Пилы цепные электрические
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/sekatory_i_suchkorezy/') Секаторы и сучкорезы
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/topory/') Топоры
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/kosy_nognitsy_kustorezy/') Косы, ножницы, кусторезы
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/pily/') Пилы
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/elektricheskie_kustorezy_i_nognitsy/') Электрические кусторезы и ножницы
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/aksessuary3/') Аксессуары
+                        li
+                          a(href='/catalogue/sad/podrezka_suchev_derevev/akkumulyatornye_kustorezy_i_nognitsy/') Бензиновые кусторезы и ножницы
+                    li
+                      span.title Бассеины и аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/basseiny_i_aksessuary/basseyny/') Бассейны
+                        li
+                          a(href='/catalogue/sad/basseiny_i_aksessuary/aksessuary_dlya_basseynov/') Аксессуары для бассейнов
+                    li
+                      span.title Декоративные пруды и аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/dekorativnye_prudy_i_aksessuary/aksessuary_dlya_pruda/') Аксессуары для пруда
+                        li
+                          a(href='/catalogue/sad/dekorativnye_prudy_i_aksessuary/nasosy_dlya_fontanov/') Насосы для фонтанов
+                        li
+                          a(href='/catalogue/sad/dekorativnye_prudy_i_aksessuary/prudy/') Пруды
+                    li
+                      span.title Средства защиты
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/sredstva_zashchity/obuv/') Обувь
+                        li
+                          a(href='/catalogue/sad/sredstva_zashchity/perchatki/') Перчатки
+                    li
+                      span.title Аксессуары для техники
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/aksessuary_dlya_tsepnykh_pil/') Аксессуары для цепных пил
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/oborudovanie_dlya_kultivatorov_i_motoblokov/') Оборудование для культиваторов и мотоблоков
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/raskhodnye_materialy/') Расходные материалы
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/aksessuary_dlya_mototehniki/') Аксессуары для триммеров
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/dvigateli_i_vsjo_dlja_ih_obsluzhivanija/') Двигатели и всё для их обслуживания
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/vspomogatelnye_instrumenty/') Вспомогательные инструменты
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/aksessuary_dlya_gazonokosilok/') Аксессуары для газонокосилок
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/aksessuary_dlya_burov2/') Аксессуары для буров
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/aksessuary_dlya_traktorov_i_snegouborochnykh_mashin/') Аксессуары для тракторов и снегоуборочных машин
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/aksessuary_dlya_kustorezov_i_sadovykh_pil/') Аксессуары для кусторезов и садовых пил
+                        li
+                          a(href='/catalogue/sad/aksessuary_dlya_tehniki/aksessuary_dlya_tachek/') Аксессуары для тачек
+              li
+                a(href='/catalogue/skobyanye_izdeliya/', title='Скобяные изделия')
+                  | Скобяные изделия
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Мебельная фурнитура
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/nogki_opory/') Ножки, опоры
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/mebelnye_ruchki/') Мебельные ручки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/mebelnye_napravlyayushchie/') Мебельные направляющие
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/kolesa_mebelnye/') Мебельные колеса
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/mebelnyy_krepeg/') Мебельный крепёж
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/petli_mebelnye/') Мебельные петли
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/perekladiny_truby_shtangi/') Перекладины, трубы, штанги
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/soedinitelnye_elementy_/') Соединительные элементы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/napravlyayushchie_dlya_shkafov_i_dverey_kupe/') Направляющие для шкафов и дверей купе
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/zadvigki_zashchelki_kryuchki_tolkateli/') Задвижки, защелки, крючки, толкатели
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/dempfery/') Демпферы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/kryuchki_i_veshalki_nastennye/') Крючки и вешалки настенные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/nasadki_nakladki_pod_mebelnye_nogki/') Насадки, накладки под мебельные ножки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/restavratsionnye_materialy/') Реставрационные материалы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/mebelnaya_furnitura/mebelnye_zamki/') Мебельные замки
+                    li
+                      span.title Дверные ручки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_na_rozetke_nagimnye_bez_mehanizma/') Ручки на розетке нажимные без механизма
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_nagimnye_s_mehanizmom/') Ручки нажимные с механизмом
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_dvernye_na_planke_s_mehanizmom_dlya_megkomn_dverey/') Ручки дверные на планке с механизмом для межкомн. дверей
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_knoby_s_mehanizmom/') Ручки кнобы с механизмом
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_dvernye_skoby/') Ручки дверные скобы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_dvernye_na_planke_s_mehanizmom_dlya_vhodnyh_dverey/') Ручки дверные на планке с механизмом для входных дверей
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/komplekty/') Комплекты
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_dvernye_na_planke_bez_mehanizma/') Ручки дверные на планке без механизма
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/finskaya_furnitura/') Финская фурнитура
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/ruchki_knoby_bez_mehanizma/') Ручки-кнобы без механизма
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/aksessuary_dlya_ruchek_na_rozetke/') Аксессуары для ручек на розетке
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernye_ruchki/dvernye_molotki/') Дверные молотки
+                    li
+                      span.title Крепеж
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/samorezy/') Саморезы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/spetsialnyy_krepeg/') Специальный крепеж
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/dyubel_gvozdi_i_dyubel_shurupy/') Дюбель-гвозди и дюбель-шурупы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/metricheskiy_krepeg_bolty_shpilki/') Метрический крепеж - болты, шпильки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/ankery/') Анкеры
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/dyubeli/') Дюбели
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/metricheskiy_krepeg_gayki_shayby/') Метрический крепеж - гайки, шайбы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/skoby/') Скобы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/gvozdi/') Гвозди
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/santehnicheskiy_krepeg/') Сантехнический крепеж
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/khimicheskiy_krepezh/') Химический крепеж
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/homuty2/') Хомуты
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/krepeg/zaklepki/') Заклепки
+                    li
+                      span.title Фурнитура для зданий и ворот
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/profili/') Профили
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/ugolki/') Уголки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/plastiny/') Пластины
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/prutki_i_trubki/') Прутки и трубки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/kronshteyny/') Кронштейны
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/zadvigki_i_zapory/') Задвижки и запоры
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/petli/') Петли
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/prochaja_furnitura/') Прочая фурнитура
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/soedinitelnye_elementy/') Соединительные элементы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/opory_dlya_peril/') Опоры для перил
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/shpingalety/') Шпингалеты
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/kryuchki/') Крючки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/perekladiny_truby_shtangi2/') Перекладины, трубы, штанги
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/fiksatory/') Фиксаторы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_dlya_zdaniy_i_vorot/podveski/') Подвески
+                    li
+                      span.title Замки, комплектующие и аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/zamki_nakladnye_i_vreznye/') Замки накладные и врезные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/zashchelki_vreznye_megkomnatnye/') Защелки врезные межкомнатные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/tsilindry_dlya_zamkov/') Цилиндры для замков
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/zamki_navesnye/') Замки навесные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/zadvigki_dvernye/') Задвижки дверные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/nakladki/') Накладки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/proushiny/') Проушины
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/zamki_komplektuyushchie_i_aksessuary/bronenakladki/') Броненакладки
+                    li
+                      span.title Такелаж
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/tsepi_i_trosy/') Цепи и тросы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/stjazhki/') Стяжки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/soediniteli_tsepey_i_karabiny/') Соединители цепей и карабины
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/bloki/') Блоки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/talrepy/') Талрепы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/nabory_dlya_krepezha_gruza/') Наборы для крепежа груза
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/zagimy_dlya_trosov/') Зажимы для тросов
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/kryuki/') Крюки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/koushi/') Коуши
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/lenty/') Ленты
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/takelag/koltsa/') Кольца
+                    li
+                      span.title Дверная фурнитура
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/dvernye_petli_i_sharniry/') Дверные петли и шарниры
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/napravlyayushchie_i_komplekty_dlya_razdvignyh_dverey/') Направляющие и комплекты для раздвижных дверей
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/stopory_dvernye/') Стопоры дверные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/dovodchiki/') Доводчики
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/roliki_dlya_razdvignyh_dverey/') Ролики для раздвижных дверей
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/znaki_i_vyveski_tsifry_tablichki/') Знаки и вывески, цифры, таблички
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/glazki_dvernye/') Глазки дверные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/pruginy/') Пружины
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/shchetki_dvernye/') Щетки дверные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/dvernaya_furnitura/komplektuyushchie_dlya_razdvizhnykh_dverey/') Комплектующие для раздвижных дверей
+                    li
+                      span.title Ковка
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/kovka/kovanye_elementy/') Кованые элементы
+                    li
+                      span.title Сейфы и ящики
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/seyfy_i_yashchiki/seyfy/') Сейфы
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/seyfy_i_yashchiki/yashchiki_dlya_hraneniya/') Ящики для хранения
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/seyfy_i_yashchiki/yashchiki_dlya_krepega/') Ящики для крепежа
+                    li
+                      span.title Фурнитура и механизмы для окна
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_i_mehanizmy_dlya_okna/okonnye_zavertki/') Завертки оконные
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/furnitura_i_mehanizmy_dlya_okna/ogranichiteli_okonnye/') Ограничители оконные
+                    li
+                      span.title Товары безопасности
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/tovary_dlya_detskoy_bezopasnosti/zashchita_na_mebel/') Защита на мебель
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/tovary_dlya_detskoy_bezopasnosti/signalnyy_inventar/') Сигнальный инвентарь
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/tovary_dlya_detskoy_bezopasnosti/aerozoli_i_smazki/') Аэрозоли и смазки
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/tovary_dlya_detskoy_bezopasnosti/signalnaya_odegda/') Сигнальная одежда
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/tovary_dlya_detskoy_bezopasnosti/zashchita_ot_elektropriborov/') Защита от электроприборов
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/tovary_dlya_detskoy_bezopasnosti/nabory_dlya_bezopasnosti/') Наборы для безопасности
+                    li
+                      span.title Почтовые ящики, декоративные элементы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/pochtovye_yashchiki_dekorativnye_elementy/pochtovye_yashchiki_i_aksessuary/') Почтовые ящики и аксессуары
+                        li
+                          a(href='/catalogue/skobyanye_izdeliya/pochtovye_yashchiki_dekorativnye_elementy/dekor_zdaniy_flyugery_vyveski_ogrady/') Декор зданий (флюгеры, вывески, ограды)
+              li
+                a(href='/catalogue/kraski/', title='Краски')
+                  | Краски
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Краски для внутренних работ
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_vnutrennih_rabot/kraski_dlya_sten_i_potolkov/') Краски для стен и потолков
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_vnutrennih_rabot/pokrytiya_dlya_dereva_dlya_vnutrennih_rabot/') Покрытия для дерева для внутренних работ
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_vnutrennih_rabot/dekorativnye_kraski_i_shtukaturki/') Декоративные краски и штукатурки
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_vnutrennih_rabot/parketnye_laki/') Паркетные лаки
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_vnutrennih_rabot/koloranty/') Колоранты
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_vnutrennih_rabot/kraski_dlya_pola/') Краски для пола
+                    li
+                      span.title Краски для наружных работ
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_narugnyh_rabot/pokrytiya_dlya_dereva_dlya_narugnyh_rabot/') Покрытия для дерева для наружных работ
+                        li
+                          a(href='/catalogue/kraski/kraski_dlya_narugnyh_rabot/fasadnye_kraski/') Фасадные краски
+                    li
+                      span.title Подготовка поверхности
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/podgotovka_poverhnosti/gruntovki/') Грунтовки
+                        li
+                          a(href='/catalogue/kraski/podgotovka_poverhnosti/shpatlevki/') Шпатлевки
+                        li
+                          a(href='/catalogue/kraski/podgotovka_poverhnosti/rastvoriteli_ochistiteli/') Растворители, очистители
+                    li
+                      span.title Клеи, клейкие ленты
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/klei/kontaktnye_klei/') Контактные клеи
+                        li
+                          a(href='/catalogue/kraski/klei/kleykie_lenty/') Клейкие ленты
+                        li
+                          a(href='/catalogue/kraski/klei/klei_pva/') Клеи ПВА
+                        li
+                          a(href='/catalogue/kraski/klei/gidkie_gvozdi/') Жидкие гвозди
+                    li
+                      span.title Инструменты для покраски
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/instrumenty_dlya_pokraski/valiki/') Валики
+                        li
+                          a(href='/catalogue/kraski/instrumenty_dlya_pokraski/kisti/') Кисти
+                        li
+                          a(href='/catalogue/kraski/instrumenty_dlya_pokraski/zashchita_poverhnosti/') Защита поверхности
+                        li
+                          a(href='/catalogue/kraski/instrumenty_dlya_pokraski/aksessuary4/') Аксессуары
+                        li
+                          a(href='/catalogue/kraski/instrumenty_dlya_pokraski/dekorativnyy_instrument/') Декоративный инструмент
+                    li
+                      span.title Эмали
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/emali/emali2/') Эмали
+                    li
+                      span.title Изоляция
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/izolyatsiya/pena_montagnaya/') Пена монтажная
+                        li
+                          a(href='/catalogue/kraski/izolyatsiya/germetiki/') Герметики
+                    li
+                      span.title Уборка
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kraski/uborka/instrument_dlya_uborki/') Инструмент для уборки
+                        li
+                          a(href='/catalogue/kraski/uborka/bytovaya_himiya/') Бытовая химия
+              li
+                a(href='/catalogue/dekor/', title='Декор')
+                  | Декор
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px; display: none;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Декор окна
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/shtory_gotovye/') Шторы готовые
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/shtory_rulonnye/') Шторы рулонные
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/tyul_gotovyy/') Тюль готовый
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/galyuzi_gorizontalnye/') Жалюзи горизонтальные
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/karnizy/') Карнизы
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/shtory_rimskie/') Шторы римские
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/tkani_na_otrez/') Ткани на отрез
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/tyul_na_otrez/') Тюль на отрез
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/aksessuary_dlya_tkaney_i_shtor/') Аксессуары для тканей и штор
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/lameli_dlya_vertikalnyh_galyuzi/') Ламели для вертикальных жалюзи
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/karnizy_nabornye/') Карнизы наборные
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/shiny_potolochnye/') Шины потолочные
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/karnizy_dlya_vertikalnyh_galyuzi/') Карнизы для вертикальных жалюзи
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/aksessuary_dlya_rulonnih_shtor/') Аксессуары для рулонных штор
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/aksessuary_dlya_gorizontalnyh_galyuzi/') Аксессуары для горизонтальных жалюзи
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/aksessuary_dlya_karnizov/') Аксессуары для карнизов
+                        li
+                          a(href='/catalogue/dekor/dekor_okna/strunnye_karnizy/') Струнные карнизы
+                    li
+                      span.title Оклейка стен/обои
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/dekor/okleyka_sten_oboi/oboi/') Обои
+                        li
+                          a(href='/catalogue/dekor/okleyka_sten_oboi/fotooboi/') Фотообои
+                        li
+                          a(href='/catalogue/dekor/okleyka_sten_oboi/dekorativnyy_kley/') Декоративный клей
+                        li
+                          a(href='/catalogue/dekor/okleyka_sten_oboi/samokleyashchiesya_plenki/') Самоклеящиеся пленки
+                        li
+                          a(href='/catalogue/dekor/okleyka_sten_oboi/naturalnye_oboi/') Натуральные обои
+                    li
+                      span.title Декор стены и дверей
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/dekor/dekor_steny_i_dverey/postery_v_ramah_kartiny_holsty_gobeleny_i_zerkala/') Постеры в рамах, картины, холсты, гобелены и зеркала
+                        li
+                          a(href='/catalogue/dekor/dekor_steny_i_dverey/ramki_i_postery/') Рамки и постеры
+                        li
+                          a(href='/catalogue/dekor/dekor_steny_i_dverey/nakleyki/') Наклейки
+                        li
+                          a(href='/catalogue/dekor/dekor_steny_i_dverey/dekorativnye_zanavesi/') Декоративные занавеси
+                    li
+                      span.title Декор мебели
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/dekor/dekor_mebeli/pledy_pokryvala/') Пледы, покрывала
+                        li
+                          a(href='/catalogue/dekor/dekor_mebeli/podushki/') Подушки
+                        li
+                          a(href='/catalogue/dekor/dekor_mebeli/skaterti_i_salfetki_dekorativnye/') Скатерти и салфетки декоративные
+                    li
+                      span.title Декор потолка
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/dekor/dekor_potolka/dekor_potolka2/') Декор потолка
+              li
+                a(href='/catalogue/osveshchenie/', title='Освещение')
+                  | Освещение
+                  i
+                .submenu(style='right: 50%; margin-right: -650px; left: auto;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Освещение для помещений и аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/lyustry/') Люстры
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/nastenno_potolochnye_svetilniki/') Настенно-потолочные светильники
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/vstraivaemye_svetilniki_spoty/') Встраиваемые светильники (споты)
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/svetilniki_spetsialnogo_naznacheniya/') Светильники специального назначения
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/bra/') Бра
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/nakladnye_svetilniki_spoty/') Накладные светильники (споты)
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/lenty_svetodiodnye/') Ленты светодиодные
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/nastolnye_lampy/') Настольные лампы
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/torshery/') Торшеры
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/aksessuary6/') Аксессуары
+                        li
+                          a(href='/catalogue/osveshchenie/osveshchenie_dlya_pomeshcheniy_i_aksessuary/detskie_svetilniki/') Детские светильники
+                    li
+                      span.title Лампы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/osveshchenie/lampy2/lampy_diodnye2/') Лампы диодные
+                        li
+                          a(href='/catalogue/osveshchenie/lampy2/lampy_energosberegayushchie/') Лампы энергосберегающие
+                        li
+                          a(href='/catalogue/osveshchenie/lampy2/lampy_lyuminestsentnye/') Лампы люминесцентные
+                        li
+                          a(href='/catalogue/osveshchenie/lampy2/lampy_galogenovye2/') Лампы галогеновые
+                        li
+                          a(href='/catalogue/osveshchenie/lampy2/lampy_spetsialnye2/') Лампы специальные
+                        li
+                          a(href='/catalogue/osveshchenie/lampy2/lampy_nakalivaniya2/') Лампы накаливания
+                        li
+                          a(href='/catalogue/osveshchenie/lampy2/patrony_startery2/') Патроны, стартеры
+                    li
+                      span.title Садово-парковое освещение
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/osveshchenie/sadovo_parkovoe_osveshchenie/svetilniki_na_solnechnyh_batarejah/') Светильники на солнечных батареях
+                        li
+                          a(href='/catalogue/osveshchenie/sadovo_parkovoe_osveshchenie/stolby/') Столбы
+                        li
+                          a(href='/catalogue/osveshchenie/sadovo_parkovoe_osveshchenie/progektory/') Прожекторы
+                        li
+                          a(href='/catalogue/osveshchenie/sadovo_parkovoe_osveshchenie/bra_nastennye/') Бра настенные
+                        li
+                          a(href='/catalogue/osveshchenie/sadovo_parkovoe_osveshchenie/podvesnye/') Подвесные
+              li
+                a(href='/catalogue/hranenie/', title='Хранение')
+                  | Хранение
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Системы хранения
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/sistemy_hraneniya/setchatye_garderobnye_sistemy/') Сетчатые гардеробные системы
+                        li
+                          a(href='/catalogue/hranenie/sistemy_hraneniya/panelnye_garderobnye_sistemy/') Панельные гардеробные системы
+                    li
+                      span.title Стеллажи
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/stellagi/stellagi2/') Стеллажи
+                    li
+                      span.title Мебельные щиты и панели
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/mebelnye_shchity_i_paneli/mebelnye_shchity/') Мебельные щиты
+                        li
+                          a(href='/catalogue/hranenie/mebelnye_shchity_i_paneli/mebelnye_paneli_ldsp/') Мебельные панели (ЛДСП)
+                        li
+                          a(href='/catalogue/hranenie/mebelnye_shchity_i_paneli/aksessuary_/') Аксессуары
+                    li
+                      span.title Полки и крепления
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/polki_i_krepleniya/polki_/') Полки
+                        li
+                          a(href='/catalogue/hranenie/polki_i_krepleniya/kronshteyny2/') Кронштейны
+                    li
+                      span.title Емкости для хранения
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/emkosti_dlya_hraneniya2/emkosti_dlya_khraneniya2/') Емкости для хранения
+                        li
+                          a(href='/catalogue/hranenie/emkosti_dlya_hraneniya2/pereezd_i_upakovka/') Переезд и упаковка
+                    li
+                      span.title Мебельные фасады и двери
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/mebelnye_fasady_i_dveri/dveri_razdvignye2/') Двери раздвижные
+                        li
+                          a(href='/catalogue/hranenie/mebelnye_fasady_i_dveri/dveri_zhalyuziynye/') Двери жалюзийные
+                        li
+                          a(href='/catalogue/hranenie/mebelnye_fasady_i_dveri/komplektuyushchie_dlya_izgotovleniya_dverey/') Комплектующие для изготовления дверей
+                    li
+                      span.title Аксессуары для шкафа
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/aksessuary_dlya_shkafa/aksessuary_dlya_shkafa_nevstraivaemye/') Аксессуары для шкафа невстраиваемые
+                        li
+                          a(href='/catalogue/hranenie/aksessuary_dlya_shkafa/aksessuary_dlya_shkafa_vstraivaemye/') Аксессуары для шкафа встраиваемые
+                    li
+                      span.title Вешалки, обувницы, этажерки
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/hranenie/veshalki_obuvnitsy_etazherki/tumby_dlya_obuvi/') Тумбы для обуви
+                        li
+                          a(href='/catalogue/hranenie/veshalki_obuvnitsy_etazherki/nastennye_veshalki/') Настенные вешалки
+                        li
+                          a(href='/catalogue/hranenie/veshalki_obuvnitsy_etazherki/etazherki/') Этажерки
+                        li
+                          a(href='/catalogue/hranenie/veshalki_obuvnitsy_etazherki/napolnye_veshalki/') Напольные вешалки
+              li
+                a(href='/catalogue/kuhni/', title='Кухни')
+                  | Кухни
+                  i
+                .submenu(style='left: 50%; margin-left: -650px; min-width: 1200px;')
+                  span.submenu_close
+                  ul.submenuBox
+                    li
+                      span.title Мебель для кухни
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kuhni/mebel_dlya_kuhni/modulnye_kuhni/') Модульные кухни
+                        li
+                          a(href='/catalogue/kuhni/mebel_dlya_kuhni/fasady_kukhonnykh_shkafov/') Фасады кухонных шкафов
+                        li
+                          a(href='/catalogue/kuhni/mebel_dlya_kuhni/korpusa_kukhonnykh_shkafov/') Корпуса кухонных шкафов
+                        li
+                          a(href='/catalogue/kuhni/mebel_dlya_kuhni/tsokol_i_komplektuyushchie/') Цоколь и комплектующие
+                        li
+                          a(href='/catalogue/kuhni/mebel_dlya_kuhni/furnitura_/') Фурнитура
+                    li
+                      span.title Столешницы
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kuhni/stoleshnitsy/stoleshnitsy_/') Столешницы
+                        li
+                          a(href='/catalogue/kuhni/stoleshnitsy/plintusy_/') Плинтусы
+                        li
+                          a(href='/catalogue/kuhni/stoleshnitsy/stoleshnitsy_barnye/') Столешницы барные
+                        li
+                          a(href='/catalogue/kuhni/stoleshnitsy/planki_dlya_stoleshnits/') Планки для столешниц
+                        li
+                          a(href='/catalogue/kuhni/stoleshnitsy/kromochnyy_plastik_dlya_stoleshnits/') Кромочный пластик для столешниц
+                        li
+                          a(href='/catalogue/kuhni/stoleshnitsy/komlekty_dlya_ustanovki_i_zaglushki/') Комлекты для установки и заглушки
+                        li
+                          a(href='/catalogue/kuhni/stoleshnitsy/kromochnyy_plastik_dlya_plintusov/') Кромочный пластик для плинтусов
+                    li
+                      span.title Кухонные аксессуары
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kuhni/kuhonnye-aksessuary/aksessuary-dlya-navesnyh-shkafov/') Наполнение для навесных шкафов
+                        li
+                          a(href='/catalogue/kuhni/kuhonnye-aksessuary/aksessuary-dlya-napolnyh-shkafov/') Наполнение для напольных шкафов
+                        li
+                          a(href='/catalogue/kuhni/kuhonnye-aksessuary/reylingovye-sistemy/') Рейлинговые системы
+                        li
+                          a(href='/catalogue/kuhni/kuhonnye-aksessuary/aksessuary-nastolnye/') Настольные аксессуары
+                        li
+                          a(href='/catalogue/kuhni/kuhonnye-aksessuary/barnye-stoyki-stulya/') Барные стойки и стулья
+                        li
+                          a(href='/catalogue/kuhni/kuhonnye-aksessuary/aksessuary-universalnye/') Универсальные аксессуары
+                    li
+                      span.title Стеновые панели
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kuhni/stenovye_paneli/stenovye_paneli_/') Стеновые панели
+                        li
+                          a(href='/catalogue/kuhni/stenovye_paneli/planki_dlya_stenovykh_paneley/') Планки для стеновых панелей
+                    li
+                      span.title Мойки и смесители
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kuhni/moyki-i-smesiteli/moyki2/') Кухонные мойки
+                        li
+                          a(href='/catalogue/kuhni/moyki-i-smesiteli/kuhonnye-smesiteli/') Кухонные смесители
+                        li
+                          a(href='/catalogue/kuhni/moyki-i-smesiteli/aksessuary_dlya_moek/') Аксессуары для моек
+                        li
+                          a(href='/catalogue/kuhni/moyki-i-smesiteli/izmelchitel-pishhevykh-otkhodov/') Измельчители пищевых отходов
+                    li
+                      span.title Бытовая техника
+                      i
+                      ul.reset
+                        li
+                          a(href='/catalogue/kuhni/bytovaya-tehnika/vytyagki2/') Вытяжки
+                        li
+                          a(href='/catalogue/kuhni/bytovaya-tehnika/varochnye-paneli/') Варочные панели
+                        li
+                          a(href='/catalogue/kuhni/bytovaya-tehnika/vozduhoochistiteli/') Воздухоочистители
+                        li
+                          a(href='/catalogue/kuhni/bytovaya-tehnika/aksessuary_dlya_bytovoy_tekhniki/') Аксессуары для бытовой техники
+          .clear
+          .grline(style='display: none;')
+        block headers
+        .wrap
+          block content
+        .footerfix
+      #footer-place
+        #footer
+          .wrap
+            .copy.left © 2015 Leroy Merlin Russia
+            ul.reset.Fmenu.right
+              li
+                a(href='/about/') Наша компания
+              li
+                a(href='/brands/') Наши марки
+              li
+                a(href='/partner/') Сотрудничество
+              li
+                a(href='/advance/') Развитие сети
+              li
+                a(href='http://rabota.leroymerlin.ru/') Наши вакансии
+              li
+                a(href='/contact/') Контакты
+              li
+                a(href='/faq/') Вопрос-ответ
+
+    script(src="js/scripts.js", async, def)
