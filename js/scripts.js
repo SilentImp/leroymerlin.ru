@@ -56,7 +56,7 @@ CardHeader = (function() {
     var offset, options, percents, pointer, props_back, props_front, side, vertcal;
     offset = this.widget.offset();
     pointer = {
-      left: event.pageX - offset.left - this.vw / 2 + 100,
+      left: event.pageX - offset.left - this.vw / 2 + 200,
       top: event.pageY - offset.top
     };
     vertcal = Math.min(pointer.top, this.widget_height) / this.widget_height;
