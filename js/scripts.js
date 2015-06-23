@@ -74,17 +74,17 @@ CardHeader = (function() {
       side = 1;
     }
     props_front = {
-      'rotateX': (-7 + vertcal * 14) + 'deg',
-      'rotateY': (-10 * percents) + 'deg',
-      'translateZ': (-60 * percents) + 'px',
-      'translateX': (-100 * percents) + 'px',
+      'rotateX': Math.round(-7 + vertcal * 14) + 'deg',
+      'rotateY': Math.round(-10 * percents) + 'deg',
+      'translateZ': Math.round(-60 * percents) + 'px',
+      'translateX': Math.round(-100 * percents) + 'px',
       'translateY': '0'
     };
     props_back = {
-      'rotateX': (-7 + vertcal * 14) + 'deg',
-      'rotateY': (-10 * percents) + 'deg',
-      'translateZ': (60 * percents) + 'px',
-      'translateX': (-100 * percents) + 'px',
+      'rotateX': Math.round(-7 + vertcal * 14) + 'deg',
+      'rotateY': Math.round(-10 * percents) + 'deg',
+      'translateZ': Math.round(60 * percents) + 'px',
+      'translateX': Math.round(-100 * percents) + 'px',
       'translateY': '0'
     };
     this.card_front.css({
