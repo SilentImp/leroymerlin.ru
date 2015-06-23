@@ -48,9 +48,11 @@ html.csstransforms3d body .card-header
     &-front
       margin -125px 0 0 -510px
       transform-origin 410px 125px
-      transform rotateY(0) translateZ(0) translateX(0)
+      transform rotateY(0) translateZ(2px) translateX(20px) translateY(10px)
+      z-index 2
 
     &-back
       margin -125px 0 0 -90px
       transform-origin -10px 125px
-      transform rotateY(0) translateZ(0) translateX(0)
+      transform rotateY(0) translateZ(-2px) translateX(-20px) translateY(-10px)
+      z-index -2
