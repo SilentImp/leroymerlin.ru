@@ -27,7 +27,7 @@ CardHeader = (function() {
       left: event.pageX - offset.left - this.vw / 2 + 100,
       top: event.pageY - offset.top
     };
-    vertcal = pointer.top / this.widget_height;
+    vertcal = Math.min(pointer.top, this.widget_height) / this.widget_height;
     if (pointer.left < -400) {
       pointer.left = -400;
     }
