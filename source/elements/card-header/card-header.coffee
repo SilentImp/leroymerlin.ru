@@ -6,24 +6,45 @@ class CardHeader
 
     @recountValues()
 
-    $(window).on 'scroll', @paralaxCards
+    $('body').on 'mousemove', @paralaxCards
     $(window).on 'resize', @recountValues
 
   recountValues: =>
     @widget_height = @widget.height()
     @widget_top = @widget.offset().top
     @vh = Math.max document.documentElement.clientHeight, window.innerHeight || 0
+    @vw = Math.max document.documentElement.clientWidth, window.innerWidth || 0
 
-  paralaxCards: =>
-    top = window.pageYOffset || document.documentElement.scrollTop
-    percents = Math.min(top*100/((@widget_height+@widget_top)*.75),100)
+  paralaxCards: (event)=>
+    offset = @widget.offset()
+    pointer =
+        left: event.pageX - offset.left - @vw/2 + 100,
+        top: event.pageY - offset.top
+
+
+    vertcal =  Math.min(pointer.top, @widget_height)/@widget_height
+
+    if pointer.left < -400
+      pointer.left = -400
+
+    if pointer.left > 400
+      pointer.left = 400
+
+    percents = pointer.left/400
+
+    if percents < 0
+      side = -1
+
+    if percents >= 0
+      side = 1
+
 
     @card_front.css
-      top: (40-(20*percents/100))+'px'
-
+      'z-index': 1-side
+      'transform': 'rotateX('+(-7+vertcal*14)+'deg) rotateY('+(-10*percents)+'deg) translateZ('+(-60*percents)+'px) translateX('+(-80*percents)+'px)'
     @card_back.css
-      top: (20+(20*percents/100))+'px'
-
+      'z-index': side-1
+      'transform': 'rotateX('+(-7+vertcal*14)+'deg) rotateY('+(-10*percents)+'deg) translateZ('+(60*percents)+'px) translateX('+(-80*percents)+'px)'
 
 $(document).ready ->
   new CardHeader

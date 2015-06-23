@@ -32,3 +32,25 @@
       z-index 1
       background-image url("../images/card-back.svg")
       background-size 347px auto
+
+html.csstransforms3d body .card-header
+  perspective 800px
+  perspective-origin calc(50% - 100px)
+  &__card
+    pointer-events none
+    will-change transform
+    &-front,
+    &-back
+      top 50%
+      left 50%
+      z-index 1
+
+    &-front
+      margin -125px 0 0 -510px
+      transform-origin 410px 125px
+      transform rotateY(0) translateZ(0) translateX(0)
+
+    &-back
+      margin -125px 0 0 -90px
+      transform-origin -10px 125px
+      transform rotateY(0) translateZ(0) translateX(0)
