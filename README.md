@@ -1,10 +1,10 @@
-# Via del Corso 88
+# Leroy Merlin
 
 ## Technologies
 
 ### Frontend
 
-* [sass][2]
+* [stylus][2]
 * [coffee][3]
 * [jade][4]
 
@@ -33,7 +33,7 @@ Twitter:  [@silentimp][11]
 Site: [http://frontender.info/][12]
 
 
-[2]: http://sass-lang.com/
+[2]: https://learnboost.github.io/stylus/
 [3]: http://coffeescript.org/
 [4]: http://jade-lang.com/
 [5]: http://gulpjs.com/
