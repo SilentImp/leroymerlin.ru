@@ -4,12 +4,14 @@ var CardHeader,
 CardHeader = (function() {
   function CardHeader() {
     this.paralaxCards = bind(this.paralaxCards, this);
+    this.backToStart = bind(this.backToStart, this);
     this.recountValues = bind(this.recountValues, this);
     this.widget = $('.card-header');
     this.card_front = this.widget.find('.card-header__card-front');
     this.card_back = this.widget.find('.card-header__card-back');
     this.recountValues();
-    $('body').on('mousemove', this.paralaxCards);
+    this.widget.on('mousemove', this.paralaxCards);
+    this.widget.on('mouseleave', this.backToStart);
     $(window).on('resize', this.recountValues);
   }
 
@@ -20,8 +22,38 @@ CardHeader = (function() {
     return this.vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   };
 
+  CardHeader.prototype.backToStart = function() {
+    var options, props_back, props_front;
+    props_front = {
+      'rotateX': 0,
+      'rotateY': 0,
+      'translateZ': '2px',
+      'translateX': '20px',
+      'translateY': '10px'
+    };
+    props_back = {
+      'rotateX': 0,
+      'rotateY': 0,
+      'translateZ': '-2px',
+      'translateX': '-20px',
+      'translateY': '-10px'
+    };
+    options = {
+      'easing': 'spring',
+      'duration': 1000
+    };
+    this.card_front.css({
+      'z-index': 2
+    });
+    this.card_back.css({
+      'z-index': -2
+    });
+    this.card_front.velocity("stop").velocity(props_front, options);
+    return this.card_back.velocity("stop").velocity(props_back, options);
+  };
+
   CardHeader.prototype.paralaxCards = function(event) {
-    var offset, percents, pointer, side, vertcal;
+    var offset, options, percents, pointer, props_back, props_front, side, vertcal;
     offset = this.widget.offset();
     pointer = {
       left: event.pageX - offset.left - this.vw / 2 + 100,
@@ -41,14 +73,32 @@ CardHeader = (function() {
     if (percents >= 0) {
       side = 1;
     }
+    props_front = {
+      'rotateX': (-7 + vertcal * 14) + 'deg',
+      'rotateY': (-10 * percents) + 'deg',
+      'translateZ': (-60 * percents) + 'px',
+      'translateX': (-80 * percents) + 'px',
+      'translateY': '0'
+    };
+    props_back = {
+      'rotateX': (-7 + vertcal * 14) + 'deg',
+      'rotateY': (-10 * percents) + 'deg',
+      'translateZ': (60 * percents) + 'px',
+      'translateX': (-80 * percents) + 'px',
+      'translateY': '0'
+    };
     this.card_front.css({
-      'z-index': 1 - side,
-      'transform': 'rotateX(' + (-7 + vertcal * 14) + 'deg) rotateY(' + (-10 * percents) + 'deg) translateZ(' + (-60 * percents) + 'px) translateX(' + (-80 * percents) + 'px)'
+      'z-index': 1 - side
     });
-    return this.card_back.css({
-      'z-index': side - 1,
-      'transform': 'rotateX(' + (-7 + vertcal * 14) + 'deg) rotateY(' + (-10 * percents) + 'deg) translateZ(' + (60 * percents) + 'px) translateX(' + (-80 * percents) + 'px)'
+    this.card_back.css({
+      'z-index': side - 1
     });
+    options = {
+      'easing': 'linear',
+      'duration': 50
+    };
+    this.card_front.velocity("stop").velocity(props_front, options);
+    return this.card_back.velocity("stop").velocity(props_back, options);
   };
 
   return CardHeader;
