@@ -21,7 +21,7 @@ CardHeader = (function() {
   };
 
   CardHeader.prototype.paralaxCards = function(event) {
-    var offset, percents, pointer;
+    var offset, percents, pointer, side;
     offset = this.widget.offset();
     pointer = {
       left: event.pageX - offset.left - this.vw / 2 + 100,
@@ -34,12 +34,18 @@ CardHeader = (function() {
       pointer.left = 400;
     }
     percents = pointer.left / 400;
+    if (percents < 0) {
+      side = -1;
+    }
+    if (percents >= 0) {
+      side = 1;
+    }
     this.card_front.css({
-      'z-index': 1 - percents,
+      'z-index': 1 - side,
       'transform': 'rotateY(' + (-10 * percents) + 'deg) translateZ(' + (-60 * percents) + 'px) translateX(' + (-80 * percents) + 'px)'
     });
     return this.card_back.css({
-      'z-index': percents - 1,
+      'z-index': side - 1,
       'transform': 'rotateY(' + (-10 * percents) + 'deg) translateZ(' + (60 * percents) + 'px) translateX(' + (-80 * percents) + 'px)'
     });
   };
