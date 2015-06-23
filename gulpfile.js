@@ -12,9 +12,7 @@ var gulp = require('gulp')
     , autoprefixer = require('gulp-autoprefixer')
     , concat = require('gulp-concat')
     , deploy = require('gulp-gh-pages')
-    , find = require('find')
     , path = require('path')
-    , iconfont = require('gulp-iconfont')
     , gulpif = require('gulp-if')
     , rename = require("gulp-rename")
     , serve = require('gulp-serve')
@@ -29,10 +27,6 @@ var gulp = require('gulp')
         , 'css': './source/css/*.css'
         , 'svg': './source/svg/**/*.svg'
         , 'images': './source/images/**/*'
-        , 'fonts': './source/fonts/*'
-        , 'svg4font': './source/svg4font/*.svg'
-        , 'svg4font_source': './source/svg4font-source/*.svg'
-        , 'svg4font_tmp': './source/svg4font/'
       }
       , 'build': {
         'html': './build/'
@@ -40,9 +34,12 @@ var gulp = require('gulp')
         , 'css': './build/css/'
         , 'images': './build/images/'
         , 'svg': './build/svg/'
-        , 'fonts': './build/fonts/'
       }
     };
+
+gulp.task('copy', function () {
+  gulp.src(dirs.source.copy).pipe(gulp.dest(dirs.build.html));
+});
 
 gulp.task('images', function () {
   return gulp.src(dirs.source.images)
@@ -65,24 +62,6 @@ gulp.task('svg', function () {
         use: [pngquant()]
       }))
     .pipe(gulp.dest(dirs.build.svg));
-});
-
-gulp.task('iconfont', function(){
-  gulp.src(dirs.source.svg4font)
-    .pipe(plumber())
-    .pipe(iconfont({
-      fontName: 'icon',
-      appendCodepoints: true
-    }))
-    .on('codepoints', function(codepoints) {
-      console.log(codepoints);
-    })
-    .pipe(gulp.dest(dirs.build.fonts));
-});
-
-gulp.task('fonts', function() {
-  return gulp.src(dirs.source.fonts)
-    .pipe(gulp.dest(dirs.build.fonts));
 });
 
 gulp.task('html', function() {
@@ -112,7 +91,7 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus())
-    .pipe(order(['fonts.css', 'reset.css']))
+    .pipe(order(['reset.css']))
     .pipe(concat("styles.css"))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -141,7 +120,7 @@ gulp.task('watch', function () {
   gulp.watch(dirs.source.coffee, ['js']);
 });
 
-gulp.task('default', ['fonts', 'html', 'css', 'js', 'images', 'svg']);
+gulp.task('default', ['copy', 'html', 'css', 'js', 'images', 'svg']);
 
 
 gulp.task('serve', serve('build'));
