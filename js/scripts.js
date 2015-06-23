@@ -9,25 +9,38 @@ CardHeader = (function() {
     this.card_front = this.widget.find('.card-header__card-front');
     this.card_back = this.widget.find('.card-header__card-back');
     this.recountValues();
-    $(window).on('scroll', this.paralaxCards);
+    this.widget.on('mousemove', this.paralaxCards);
     $(window).on('resize', this.recountValues);
   }
 
   CardHeader.prototype.recountValues = function() {
     this.widget_height = this.widget.height();
     this.widget_top = this.widget.offset().top;
-    return this.vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    this.vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return this.vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   };
 
-  CardHeader.prototype.paralaxCards = function() {
-    var percents, top;
-    top = window.pageYOffset || document.documentElement.scrollTop;
-    percents = Math.min(top * 100 / ((this.widget_height + this.widget_top) * .75), 100);
+  CardHeader.prototype.paralaxCards = function(event) {
+    var offset, percents, pointer;
+    offset = this.widget.offset();
+    pointer = {
+      left: event.pageX - offset.left - this.vw / 2 + 100,
+      top: event.pageY - offset.top
+    };
+    if (pointer.left < -400) {
+      pointer.left = -400;
+    }
+    if (pointer.left > 400) {
+      pointer.left = 400;
+    }
+    percents = pointer.left / 400;
     this.card_front.css({
-      top: (40 - (20 * percents / 100)) + 'px'
+      'z-index': 1 - percents,
+      'transform': 'rotateY(' + (-10 * percents) + 'deg) translateZ(' + (-60 * percents) + 'px) translateX(' + (-80 * percents) + 'px)'
     });
     return this.card_back.css({
-      top: (20 + (20 * percents / 100)) + 'px'
+      'z-index': percents - 1,
+      'transform': 'rotateY(' + (-10 * percents) + 'deg) translateZ(' + (60 * percents) + 'px) translateX(' + (-80 * percents) + 'px)'
     });
   };
 
