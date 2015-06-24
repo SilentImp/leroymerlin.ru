@@ -26,7 +26,7 @@ var gulp = require('gulp')
         , 'js': './source/js/**/*.js'
         , 'stylus': './source/**/*.styl'
         , 'css': './source/css/*.css'
-        , 'svg': './source/svg/**/*.svg'
+        , 'svg': './source/images/**/*.svg'
         , 'images': './source/images/**/*'
       }
       , 'build': {
@@ -42,17 +42,21 @@ gulp.task('copy', function () {
   gulp.src(dirs.source.copy).pipe(gulp.dest(dirs.build.html));
 });
 
-gulp.task('images', function () {
+gulp.task('images', ['svg'], function () {
   return gulp.src(dirs.source.images)
     .pipe(plumber())
     .pipe(gulpif(/[.](svg)$/, svg2png()))
-    .pipe(gulpif(/[.](png|jpeg|jpg|svg)$/, imagemin({
+    .pipe(gulpif(/[.](png|jpeg|jpg)$/, imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
         use: [pngquant()]
       })
     ))
     .pipe(gulp.dest(dirs.build.images));
+});
+
+gulp.task('svg', function () {
+  gulp.src(dirs.source.svg).pipe(gulp.dest(dirs.build.images));
 });
 
 gulp.task('html', function() {
