@@ -1,11 +1,14 @@
-var CardHeader,
+var CardHeader2D,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-CardHeader = (function() {
-  function CardHeader() {
+CardHeader2D = (function() {
+  function CardHeader2D() {
     this.paralaxCards = bind(this.paralaxCards, this);
     this.backToStart = bind(this.backToStart, this);
     this.recountValues = bind(this.recountValues, this);
+    if ($('html').hasClass('csstransforms3d')) {
+      return;
+    }
     this.widget = $('.card-header');
     this.card_front = this.widget.find('.card-header__card-front');
     this.card_back = this.widget.find('.card-header__card-back');
@@ -15,14 +18,104 @@ CardHeader = (function() {
     $(window).on('resize', this.recountValues);
   }
 
-  CardHeader.prototype.recountValues = function() {
+  CardHeader2D.prototype.recountValues = function() {
     this.widget_height = this.widget.height();
     this.widget_top = this.widget.offset().top;
     this.vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     return this.vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   };
 
-  CardHeader.prototype.backToStart = function() {
+  CardHeader2D.prototype.backToStart = function() {
+    var options, props_back, props_front;
+    props_front = {
+      'margin-top': 0,
+      'margin-left': -610
+    };
+    props_back = {
+      'margin-top': 0,
+      'margin-left': -230
+    };
+    options = {
+      'easing': 'spring',
+      'duration': 1000
+    };
+    this.card_front.velocity("stop").velocity(props_front, options);
+    return this.card_back.velocity("stop").velocity(props_back, options);
+  };
+
+  CardHeader2D.prototype.paralaxCards = function(event) {
+    var offset, options, percents, pointer, props_back, props_front, side, vertcal;
+    offset = this.widget.offset();
+    pointer = {
+      left: event.pageX - offset.left - this.vw / 2 + 200,
+      top: event.pageY - offset.top
+    };
+    vertcal = Math.min(pointer.top, this.widget_height) / this.widget_height;
+    if (pointer.left < -400) {
+      pointer.left = -400;
+    }
+    if (pointer.left > 400) {
+      pointer.left = 400;
+    }
+    percents = pointer.left / 400;
+    if (percents < 0) {
+      side = -1;
+    }
+    if (percents >= 0) {
+      side = 1;
+    }
+    props_front = {
+      'margin-top': -15 * (percents + 1),
+      'margin-left': -610 + 20 * vertcal
+    };
+    props_back = {
+      'margin-top': 15 * (percents + 1),
+      'margin-left': -230 - 20 * vertcal
+    };
+    options = {
+      'easing': 'linear',
+      'duration': 0
+    };
+    this.card_front.velocity("stop").velocity(props_front, options);
+    return this.card_back.velocity("stop").velocity(props_back, options);
+  };
+
+  return CardHeader2D;
+
+})();
+
+$(document).ready(function() {
+  return new CardHeader2D;
+});
+
+var CardHeader3D,
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+CardHeader3D = (function() {
+  function CardHeader3D() {
+    this.paralaxCards = bind(this.paralaxCards, this);
+    this.backToStart = bind(this.backToStart, this);
+    this.recountValues = bind(this.recountValues, this);
+    if ($('html').hasClass('no-csstransforms3d')) {
+      return;
+    }
+    this.widget = $('.card-header');
+    this.card_front = this.widget.find('.card-header__card-front');
+    this.card_back = this.widget.find('.card-header__card-back');
+    this.recountValues();
+    this.widget.on('mousemove', this.paralaxCards);
+    this.widget.on('mouseleave', this.backToStart);
+    $(window).on('resize', this.recountValues);
+  }
+
+  CardHeader3D.prototype.recountValues = function() {
+    this.widget_height = this.widget.height();
+    this.widget_top = this.widget.offset().top;
+    this.vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return this.vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  };
+
+  CardHeader3D.prototype.backToStart = function() {
     var options, props_back, props_front;
     props_front = {
       'rotateX': 0,
@@ -52,7 +145,7 @@ CardHeader = (function() {
     return this.card_back.velocity("stop").velocity(props_back, options);
   };
 
-  CardHeader.prototype.paralaxCards = function(event) {
+  CardHeader3D.prototype.paralaxCards = function(event) {
     var offset, options, percents, pointer, props_back, props_front, side, vertcal;
     offset = this.widget.offset();
     pointer = {
@@ -101,10 +194,10 @@ CardHeader = (function() {
     return this.card_back.velocity("stop").velocity(props_back, options);
   };
 
-  return CardHeader;
+  return CardHeader3D;
 
 })();
 
 $(document).ready(function() {
-  return new CardHeader;
+  return new CardHeader3D;
 });
