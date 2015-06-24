@@ -1,5 +1,9 @@
-class CardHeader
+class CardHeader3D
   constructor: ->
+
+    if $('html').hasClass 'no-csstransforms3d'
+      return
+
     @widget = $ '.card-header'
     @card_front = @widget.find '.card-header__card-front'
     @card_back = @widget.find '.card-header__card-back'
@@ -17,7 +21,6 @@ class CardHeader
     @vw = Math.max document.documentElement.clientWidth, window.innerWidth || 0
 
   backToStart: =>
-
 
     props_front =
       'rotateX': 0,
@@ -49,7 +52,7 @@ class CardHeader
   paralaxCards: (event)=>
     offset = @widget.offset()
     pointer =
-        left: event.pageX - offset.left - @vw/2 + 100,
+        left: event.pageX - offset.left - @vw/2 + 200,
         top: event.pageY - offset.top
 
 
@@ -70,17 +73,17 @@ class CardHeader
       side = 1
 
     props_front =
-      'rotateX': (-7+vertcal*14)+'deg',
-      'rotateY': (-10*percents)+'deg',
-      'translateZ': (-60*percents)+'px',
-      'translateX': (-80*percents)+'px',
+      'rotateX': Math.round(-7+vertcal*14)+'deg',
+      'rotateY': Math.round(-10*percents)+'deg',
+      'translateZ': Math.round(-60*percents)+'px',
+      'translateX': Math.round(-100*percents)+'px',
       'translateY': '0'
 
     props_back =
-      'rotateX': (-7+vertcal*14)+'deg',
-      'rotateY': (-10*percents)+'deg',
-      'translateZ': (60*percents)+'px',
-      'translateX': (-80*percents)+'px',
+      'rotateX': Math.round(-7+vertcal*14)+'deg',
+      'rotateY': Math.round(-10*percents)+'deg',
+      'translateZ': Math.round(60*percents)+'px',
+      'translateX': Math.round(-100*percents)+'px',
       'translateY': '0'
 
     @card_front.css
@@ -95,6 +98,5 @@ class CardHeader
     @card_front.velocity("stop").velocity(props_front, options)
     @card_back.velocity("stop").velocity(props_back, options)
 
-
 $(document).ready ->
-  new CardHeader
+  new CardHeader3D

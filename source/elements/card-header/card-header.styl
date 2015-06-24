@@ -35,7 +35,7 @@
 
 html.csstransforms3d body .card-header
   perspective 800px
-  perspective-origin calc(50% - 100px)
+  perspective-origin calc(50% - 200px)
   &__card
     pointer-events none
     will-change transform
@@ -46,13 +46,24 @@ html.csstransforms3d body .card-header
       z-index 1
 
     &-front
-      margin -125px 0 0 -510px
+      margin -125px 0 0 -610px
       transform-origin 410px 125px
-      transform rotateY(0) translateZ(2px) translateX(20px) translateY(10px)
+      transform rotateY(0) rotateX(0) translateZ(2px) translateX(20px) translateY(10px)
       z-index 2
 
     &-back
-      margin -125px 0 0 -90px
+      margin -125px 0 0 -190px
       transform-origin -10px 125px
-      transform rotateY(0) translateZ(-2px) translateX(-20px) translateY(-10px)
+      transform rotateY(0) rotateX(0) translateZ(-2px) translateX(-20px) translateY(-10px)
       z-index -2
+
+html.no-svg body .card-header
+  &__card
+    width 408px
+    height 258px
+    &-front
+      top 36px
+      background url("../images/front.png") 0px 0px no-repeat
+    &-back
+      top 16px
+      background url("../images/back.png") 0px 0px no-repeat

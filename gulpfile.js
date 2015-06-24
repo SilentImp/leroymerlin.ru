@@ -16,6 +16,7 @@ var gulp = require('gulp')
     , gulpif = require('gulp-if')
     , rename = require("gulp-rename")
     , serve = require('gulp-serve')
+    , svg2png = require('gulp-svg2png')
     , dirs = {
       'source': {
         'jade': ['./source/elements/**/*.jade','./source/pages/*.jade','./source/partials/*.jade']
@@ -44,6 +45,7 @@ gulp.task('copy', function () {
 gulp.task('images', function () {
   return gulp.src(dirs.source.images)
     .pipe(plumber())
+    .pipe(gulpif(/[.](svg)$/, svg2png()))
     .pipe(gulpif(/[.](png|jpeg|jpg|svg)$/, imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
@@ -51,17 +53,6 @@ gulp.task('images', function () {
       })
     ))
     .pipe(gulp.dest(dirs.build.images));
-});
-
-gulp.task('svg', function () {
-  return gulp.src(dirs.source.svg)
-    .pipe(plumber())
-    .pipe(imagemin({
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant()]
-      }))
-    .pipe(gulp.dest(dirs.build.svg));
 });
 
 gulp.task('html', function() {
@@ -120,7 +111,7 @@ gulp.task('watch', function () {
   gulp.watch(dirs.source.coffee, ['js']);
 });
 
-gulp.task('default', ['copy', 'html', 'css', 'js', 'images', 'svg']);
+gulp.task('default', ['copy', 'html', 'css', 'js', 'images']);
 
 
 gulp.task('serve', serve('build'));

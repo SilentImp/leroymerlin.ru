@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" id="Isolation_Mode" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 406.4 406.4" enable-background="new 0 0 406.4 406.4" xml:space="preserve">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Isolation_Mode" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 66 66" enable-background="new 0 0 66 66" xml:space="preserve">
 <g>
-	<circle fill="#50B848" cx="203.2" cy="326.8" r="18.4"/>
-	<circle fill="#50B848" cx="77.1" cy="203.2" r="18.4"/>
-	<polygon fill="#50B848" points="209.3,204.4 209.3,69.8 184.8,69.8 184.8,237.5 273,211.8 265.6,187.3 	"/>
-	<path fill="#50B848" d="M203.2,0C90.6,0,0,91.8,0,203.2s90.6,203.2,203.2,203.2s203.2-90.6,203.2-203.2C406.4,91.8,314.6,0,203.2,0
-		z M203.2,384.3C102.8,384.3,22,303.6,22,203.2S102.8,22,203.2,22s181.2,80.8,181.2,181.2S303.6,384.3,203.2,384.3z"/>
-	<circle fill="#50B848" cx="331.7" cy="203.2" r="18.4"/>
+	<circle fill="#50B848" cx="33" cy="53.1" r="3"/>
+	<circle fill="#50B848" cx="12.5" cy="33" r="3"/>
+	<polygon fill="#50B848" points="34,33.2 34,11.3 30,11.3 30,38.6 44.3,34.4 43.1,30.4 	"/>
+	<path fill="#50B848" d="M33,0C14.7,0,0,14.9,0,33s14.7,33,33,33s33-14.7,33-33C66,14.9,51.1,0,33,0z M33,62.4
+		C16.7,62.4,3.6,49.3,3.6,33S16.7,3.6,33,3.6S62.4,16.7,62.4,33S49.3,62.4,33,62.4z"/>
+	<circle fill="#50B848" cx="53.9" cy="33" r="3"/>
 </g>
 </svg>
