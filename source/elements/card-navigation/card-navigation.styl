@@ -39,6 +39,7 @@ html body .card-navigation
 
       #rec,
       #cog,
+      #svg-hand,
       #clock,
       #svg-card-back,
       #svg-card
@@ -60,12 +61,14 @@ html body .card-navigation
       margin 0 5px 0 0
 
     &_get svg
-      width 60px
-      margin 0 15px 0 0
+      width 65px
+      margin 0 10px 0 0
 
     &_current,
     &:hover
       color $mid-green
+      #svg-hand
+        transform translateX(5px) translateY(2px)
       #rec
         transform translateX(-5px) translateY(-5px)
       #cog
