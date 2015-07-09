@@ -8,37 +8,28 @@ Advantages = (function() {
     if (this.widget.length === 0) {
       return;
     }
-    return;
-    this.advantages = $('.advantages__advantage, .advantages__title');
+    this.advs = $('.advantages__advantage');
+    this.counter = 0;
     this.checkState();
     $(window).on('scroll', this.checkState);
   }
 
   Advantages.prototype.checkState = function() {
-    var advantage, distance, i, j, len, percent, ref, results, scroll, vh;
+    var adv, i, len, ref, scroll, vh;
     scroll = $(window).scrollTop();
     vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    i = 2;
-    ref = this.advantages;
-    results = [];
-    for (j = 0, len = ref.length; j < len; j++) {
-      advantage = ref[j];
-      i++;
-      advantage = $(advantage);
-      distance = advantage.offset().top - (scroll + vh * 0.5);
-      percent = Math.max(Math.min(1 - (distance / (vh * 0.5)), 1), 0).toFixed(2);
-      results.push(advantage.css({
-        '-webkit-transform': 'translateZ(' + (1 - i % 2 * 2) * ((1 - percent) * 200) + 'px) rotateY(' + (1 - i % 2 * 2) * (35 * (1 - percent)) + 'deg)',
-        '-moz-transform': 'translateZ(' + (1 - i % 2 * 2) * ((1 - percent) * 200) + 'px) rotateY(' + (1 - i % 2 * 2) * (35 * (1 - percent)) + 'deg)',
-        '-ms-transform': 'translateZ(' + (1 - i % 2 * 2) * ((1 - percent) * 200) + 'px) rotateY(' + (1 - i % 2 * 2) * (35 * (1 - percent)) + 'deg)',
-        'transform': 'translateZ(' + (1 - i % 2 * 2) * ((1 - percent) * 200) + 'px) rotateY(' + (1 - i % 2 * 2) * (35 * (1 - percent)) + 'deg)',
-        '-webkit-filter': 'blur(' + (10 * (1 - percent)) + 'px)',
-        '-moz-filter': 'blur(' + (10 * (1 - percent)) + 'px)',
-        'filter': 'blur(' + (10 * (1 - percent)) + 'px)',
-        'opacity': percent
-      }));
+    ref = this.advs;
+    for (i = 0, len = ref.length; i < len; i++) {
+      adv = ref[i];
+      adv = $(adv);
+      if ((adv.offset().top + adv.outerHeight(true) < scroll + vh) && (!adv.hasClass('advantages__advantage_start'))) {
+        adv.addClass('advantages__advantage_start');
+        this.counter++;
+      }
     }
-    return results;
+    if (this.counter === this.advs.length) {
+      return $(window).off('scroll', this.checkState);
+    }
   };
 
   return Advantages;
@@ -47,6 +38,48 @@ Advantages = (function() {
 
 $(document).ready(function() {
   return new Advantages;
+});
+
+var Details,
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+Details = (function() {
+  function Details() {
+    this.checkState = bind(this.checkState, this);
+    this.widget = $('.card-details');
+    if (this.widget.length === 0) {
+      return;
+    }
+    this.steps = $('.card-details__address-flag');
+    this.counter = 0;
+    this.checkState();
+    $(window).on('scroll', this.checkState);
+  }
+
+  Details.prototype.checkState = function() {
+    var i, len, ref, scroll, step, vh;
+    scroll = $(window).scrollTop();
+    vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    ref = this.steps;
+    for (i = 0, len = ref.length; i < len; i++) {
+      step = ref[i];
+      step = $(step);
+      if ((step.offset().top + step.outerHeight(true) < scroll + vh) && (!step.hasClass('card-details__address-flag_start'))) {
+        step.addClass('card-details__address-flag_start');
+        this.counter++;
+      }
+    }
+    if (this.counter === this.steps.length) {
+      return $(window).off('scroll', this.checkState);
+    }
+  };
+
+  return Details;
+
+})();
+
+$(document).ready(function() {
+  return new Details;
 });
 
 var GetCard,
@@ -59,32 +92,28 @@ GetCard = (function() {
     if (this.widget.length === 0) {
       return;
     }
-    return;
-    this.steps = $('.card-get__step span');
+    this.steps = $('.card-get__step');
+    this.counter = 0;
     this.checkState();
     $(window).on('scroll', this.checkState);
   }
 
   GetCard.prototype.checkState = function() {
-    var distance, i, j, len, percent, ref, results, scroll, step, vh;
+    var i, len, ref, scroll, step, vh;
     scroll = $(window).scrollTop();
     vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    i = 2;
     ref = this.steps;
-    results = [];
-    for (j = 0, len = ref.length; j < len; j++) {
-      step = ref[j];
-      i++;
+    for (i = 0, len = ref.length; i < len; i++) {
+      step = ref[i];
       step = $(step);
-      distance = step.offset().top - (scroll + vh * 0.5);
-      percent = Math.max(Math.min(1 - (distance / (vh * 0.5)), 1), 0).toFixed(2);
-      console.log(360 * percent, 'rotateY(' + (360 * percent) + 'deg)');
-      results.push(step.css({
-        'transform': 'translateZ(' + ((1 - percent) * 250) + 'px) rotateY(' + (360 * percent) + 'deg)',
-        'opacity': percent
-      }));
+      if ((step.offset().top + step.outerHeight(true) < scroll + vh) && (!step.hasClass('card-get__step_start'))) {
+        step.addClass('card-get__step_start');
+        this.counter++;
+      }
     }
-    return results;
+    if (this.counter === this.steps.length) {
+      return $(window).off('scroll', this.checkState);
+    }
   };
 
   return GetCard;
@@ -325,8 +354,9 @@ CardNavigation = (function() {
   };
 
   CardNavigation.prototype.checkCurrent = function() {
-    var chapter, current, i, len, ref;
+    var chapter, current, i, len, ref, results;
     ref = this.chapters;
+    results = [];
     for (i = 0, len = ref.length; i < len; i++) {
       chapter = ref[i];
       chapter = $(chapter);
@@ -338,17 +368,11 @@ CardNavigation = (function() {
         this.current = this.widget.find('[data-target="' + current + '"]');
         this.current.toggleClass('card-navigation__link_current', true);
         break;
+      } else {
+        results.push(void 0);
       }
     }
-    if (this.chapter !== current) {
-      this.chapter = current;
-      switch (current) {
-        case 'advantages':
-          return $('.advantages__advantage').addClass('advantages__advantage_start');
-        case 'get':
-          return $('.card-get__step').addClass('card-get__step_start');
-      }
-    }
+    return results;
   };
 
   CardNavigation.prototype.scrollToChapter = function(event) {
