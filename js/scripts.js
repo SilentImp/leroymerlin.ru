@@ -8,6 +8,7 @@ Advantages = (function() {
     if (this.widget.length === 0) {
       return;
     }
+    return;
     this.advantages = $('.advantages__advantage, .advantages__title');
     this.checkState();
     $(window).on('scroll', this.checkState);
@@ -58,6 +59,7 @@ GetCard = (function() {
     if (this.widget.length === 0) {
       return;
     }
+    return;
     this.steps = $('.card-get__step span');
     this.checkState();
     $(window).on('scroll', this.checkState);
@@ -330,12 +332,21 @@ CardNavigation = (function() {
       chapter = $(chapter);
       if (chapter.offset().top + chapter.outerHeight() / 2 > $(window).scrollTop()) {
         current = chapter.attr('id');
-        this.chapter = chapter;
         if (this.current) {
           this.current.removeClass('card-navigation__link_current');
         }
         this.current = this.widget.find('[data-target="' + current + '"]');
         this.current.toggleClass('card-navigation__link_current', true);
+        if (this.chapter !== chapter) {
+          switch (current) {
+            case 'advantages':
+              $('.advantages__advantage').addClass('advantages__advantage_start');
+              break;
+            case 'get':
+              $('.card-get__step').addClass('card-get__step_start');
+          }
+        }
+        this.chapter = chapter;
         return;
       }
     }
