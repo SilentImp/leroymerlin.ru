@@ -1,0 +1,53 @@
+@import "../../helpers/*"
+
+html body .card-navigation
+  position relative
+  height 80px
+  font-family Arial, sans-serif
+
+  &__outer-wrapper
+    height 80px
+    position static
+    background-color $white
+    border-bottom 1px solid $mid-grey
+
+  &_fixed .card-navigation__outer-wrapper
+    position fixed
+    top 0
+    left 0
+    right 0
+    z-index 10
+
+  &__wrapper
+    margin 0 auto
+    width 1220px
+    line-height 80px
+
+  &__link
+    display inline-block
+    font-size 16px
+    color $black
+    text-decoration none
+    padding 0 0 0 75px
+    transition color .25s!important;
+    background 0 100% no-repeat
+    &_card
+      background-image url("../images/card_icon_servise_card.svg")
+    &_advantages
+      background-image url("../images/card_icon_benefits.svg")
+      background-position 0 -5px
+    &_get
+      background-image url("../images/card_icon_how.svg")
+    &_current,
+    &:hover
+      color $mid-green
+      span
+        background-color $mid-green
+    span
+      display inline-block
+      height 1px
+      width 65px
+      margin 0 20px
+      background-color $midmid-grey
+      vertical-align middle
+      transition background-color .25s

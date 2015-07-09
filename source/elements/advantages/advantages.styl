@@ -5,12 +5,21 @@
   max-width 900px
   margin 50px 0
   border-bottom 1px solid $grey
+
+  perspective 600px
+  perspective-origin 50% 20%
+  transform-style preserve-3d
+
   &__title
     title()
+  &__list
+    transform-style preserve-3d
   &__advantage
     margin 0 0 45px
     padding 0 0 0 110px
     position relative
+    // transform translateZ(200px)
+    // opacity 0
     &_history
       background url("../images/ic_history.svg") 7px 0px no-repeat
       background-size 74px auto
