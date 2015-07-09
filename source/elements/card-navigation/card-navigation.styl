@@ -28,19 +28,56 @@ html body .card-navigation
     font-size 16px
     color $black
     text-decoration none
-    padding 0 0 0 75px
+    padding 0
     transition color .25s!important;
     background 0 100% no-repeat
-    &_card
-      background-image url("../images/card_icon_servise_card.svg")
-    &_advantages
-      background-image url("../images/card_icon_benefits.svg")
-      background-position 0 -5px
-    &_get
-      background-image url("../images/card_icon_how.svg")
+
+    svg
+      width 75px
+      vertical-align middle
+      position relative
+
+      #rec,
+      #cog,
+      #clock,
+      #svg-card-back,
+      #svg-card
+        transform translateX(0) translateY(0)
+        transition transform .25s
+
+      #svg-card-front
+        transform translateX(0) translateY(7.234727px)
+        transition transform .25s
+
+
+    &_card svg
+      width 52px
+      margin 0 23px 0 0
+
+    &_advantages svg
+      width 70px
+      height 60px
+      margin 0 5px 0 0
+
+    &_get svg
+      width 60px
+      margin 0 15px 0 0
+
     &_current,
     &:hover
       color $mid-green
+      #rec
+        transform translateX(-5px) translateY(-5px)
+      #cog
+        transform translateX(0) translateY(-8px) rotateZ(0deg)
+      #clock
+        transform translateX(5px) translateY(-5px)
+      #svg-card
+        transform translateX(-8px) translateY(-2px)
+      #svg-card-back
+        transform translateX(-8px) translateY(7.234727px)
+      #svg-card-front
+        transform translateX(8px) translateY(0)
       span
         background-color $mid-green
     span

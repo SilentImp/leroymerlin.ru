@@ -24,17 +24,18 @@ class CardNavigation
           @current.removeClass 'card-navigation__link_current'
         @current = @widget.find('[data-target="'+current+'"]')
         @current.toggleClass 'card-navigation__link_current', true
+        break
+    if @chapter != current
+      @chapter = current
+      switch current
+        when 'advantages'
+          $('.advantages__advantage').addClass 'advantages__advantage_start'
+        when 'get'
+          $('.card-get__step').addClass 'card-get__step_start'
 
-        if @chapter != chapter
-          switch current
-            when 'advantages'
-              $('.advantages__advantage').addClass 'advantages__advantage_start'
-            when 'get'
-              $('.card-get__step').addClass 'card-get__step_start'
 
-        @chapter = chapter
 
-        return
+
 
   scrollToChapter: (event)=>
     event.preventDefault()
