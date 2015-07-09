@@ -64,7 +64,7 @@ Details = (function() {
     for (i = 0, len = ref.length; i < len; i++) {
       step = ref[i];
       step = $(step);
-      if ((step.offset().top + step.outerHeight(true) < scroll + vh) && (!step.hasClass('card-details__address-flag_start'))) {
+      if ((step.offset().top + step.outerHeight(true) + 40 < scroll + vh) && (!step.hasClass('card-details__address-flag_start'))) {
         step.addClass('card-details__address-flag_start');
         this.counter++;
       }
