@@ -4,6 +4,8 @@ class Advantages
     if @widget.length == 0
       return
 
+    return
+
     @advantages = $ '.advantages__advantage, .advantages__title'
 
     @checkState()

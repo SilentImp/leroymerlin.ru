@@ -6,20 +6,42 @@
   margin 50px 0
   border-bottom 1px solid $grey
 
-  perspective 600px
-  perspective-origin 50% 20%
+  perspective 900px
   transform-style preserve-3d
 
   &__title
     title()
   &__list
     transform-style preserve-3d
+
   &__advantage
     margin 0 0 45px
     padding 0 0 0 110px
     position relative
-    // transform translateZ(200px)
-    // opacity 0
+
+    &_start
+      animation-play-state running
+
+    animation-fill-mode both
+    animation-duration 1s
+    animation-timing-function ease-out
+    animation-play-state paused
+    animation-direction alternate
+    animation-iteration-count 1
+
+    &:nth-child(1)
+      animation-name falling-even
+      animation-delay 0s
+    &:nth-child(2)
+      animation-name falling-odd
+      animation-delay .5s
+    &:nth-child(3)
+      animation-name falling-even
+      animation-delay 1s
+    &:nth-child(4)
+      animation-name falling-odd
+      animation-delay 1.5s
+
     &_history
       background url("../images/ic_history.svg") 7px 0px no-repeat
       background-size 74px auto
@@ -64,3 +86,34 @@ html.no-svg .advantages
       background url("../images/ic_sendback.png") 12px 0px no-repeat
     &_time
       background url("../images/ic_clock.png") 11px 0px no-repeat
+
+
+@keyframes falling-odd {
+    from {
+      transform translateZ(-600px) rotateY(35deg)
+      opacity .1
+    }
+    70%{
+      transform translateZ(100px) rotateY(-20deg)
+      opacity .7
+      }
+    100% {
+      transform translateZ(0) rotateY(0)
+      opacity 1
+    }
+}
+
+@keyframes falling-even {
+    from {
+      opacity .1
+      transform translateZ(-600px) rotateY(-35deg)
+    }
+    70%{
+      transform translateZ(100px) rotateY(20deg)
+      opacity .7
+      }
+    100% {
+      transform translateZ(0) rotateY(0)
+      opacity 1
+    }
+}

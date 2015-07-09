@@ -20,11 +20,20 @@ class CardNavigation
       chapter = $(chapter)
       if chapter.offset().top+chapter.outerHeight()/2 > $(window).scrollTop()
         current = chapter.attr 'id'
-        @chapter = chapter
         if @current
           @current.removeClass 'card-navigation__link_current'
         @current = @widget.find('[data-target="'+current+'"]')
         @current.toggleClass 'card-navigation__link_current', true
+
+        if @chapter != chapter
+          switch current
+            when 'advantages'
+              $('.advantages__advantage').addClass 'advantages__advantage_start'
+            when 'get'
+              $('.card-get__step').addClass 'card-get__step_start'
+
+        @chapter = chapter
+
         return
 
   scrollToChapter: (event)=>

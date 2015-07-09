@@ -4,6 +4,8 @@ class GetCard
     if @widget.length == 0
       return
 
+    return
+
     @steps = $ '.card-get__step span'
 
     @checkState()
