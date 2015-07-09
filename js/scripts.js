@@ -337,17 +337,16 @@ CardNavigation = (function() {
         }
         this.current = this.widget.find('[data-target="' + current + '"]');
         this.current.toggleClass('card-navigation__link_current', true);
-        if (this.chapter !== chapter) {
-          switch (current) {
-            case 'advantages':
-              $('.advantages__advantage').addClass('advantages__advantage_start');
-              break;
-            case 'get':
-              $('.card-get__step').addClass('card-get__step_start');
-          }
-        }
-        this.chapter = chapter;
-        return;
+        break;
+      }
+    }
+    if (this.chapter !== current) {
+      this.chapter = current;
+      switch (current) {
+        case 'advantages':
+          return $('.advantages__advantage').addClass('advantages__advantage_start');
+        case 'get':
+          return $('.card-get__step').addClass('card-get__step_start');
       }
     }
   };
