@@ -26,6 +26,7 @@
     span
       animation-fill-mode both
       animation-duration .75s, .6s
+      animation-delay 0s, .75s
       animation-timing-function ease-out
       animation-play-state paused
       animation-iteration-count 1
@@ -46,16 +47,6 @@
 
   &__step_start span
     animation-play-state running
-
-  &__step:nth-child(1) span
-    animation-delay .5s, 1.25s
-
-  &__step:nth-child(2) span
-    animation-delay 1s, 1.75s
-
-  &__step:nth-child(3) span
-    animation-delay 1.5s, 2.25s
-
 
 
 html.no-borderradius .card-get

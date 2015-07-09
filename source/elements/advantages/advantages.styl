@@ -29,18 +29,10 @@
     animation-direction alternate
     animation-iteration-count 1
 
-    &:nth-child(1)
+    &:nth-child(2n)
       animation-name falling-even
-      animation-delay 0s
-    &:nth-child(2)
+    &:nth-child(2n+1)
       animation-name falling-odd
-      animation-delay .25s
-    &:nth-child(3)
-      animation-name falling-even
-      animation-delay .5s
-    &:nth-child(4)
-      animation-name falling-odd
-      animation-delay .75s
 
     &_history
       background url("../images/ic_history.svg") 7px 0px no-repeat
@@ -91,7 +83,7 @@ html.no-svg .advantages
 @keyframes falling-odd {
     from {
       transform translateZ(-600px) rotateY(35deg)
-      opacity .1
+      opacity 0
     }
     70%{
       transform translateZ(100px) rotateY(-20deg)
@@ -105,7 +97,7 @@ html.no-svg .advantages
 
 @keyframes falling-even {
     from {
-      opacity .1
+      opacity 0
       transform translateZ(-600px) rotateY(-35deg)
     }
     70%{
