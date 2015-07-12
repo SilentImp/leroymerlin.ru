@@ -1,5 +1,15 @@
 @import "../../helpers/*"
 
+html.no-svg body .card-navigation
+  &__link
+    padding-left 60px
+    &_card
+      background url("../images/card_icon_servise_card.png") -22px -7px no-repeat
+    &_get
+      background url("../images/card_icon_how.png") -22px -7px no-repeat
+    &_advantages
+      background url("../images/card_icon_benefits.png") -22px -15px no-repeat
+
 html body .card-navigation
   position relative
   height 80px
@@ -91,3 +101,14 @@ html body .card-navigation
       background-color $midmid-grey
       vertical-align middle
       transition background-color .25s
+
+
+
+@media (max-width: 1220px)
+  html body .card-navigation
+    &__wrapper
+      padding 0 20px
+    &__link
+      span
+        width 20px
+        margin 0 5px

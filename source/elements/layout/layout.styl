@@ -1,8 +1,21 @@
 @import "../../helpers/*"
 
+html, body
+  overflow-x hidden
+
 .main
   min-height calc( 100vh - 60px )
+  overflow-x hidden
+  position relative
   .wrap
     overflow visible
+    width 1220px
+    margin 0 auto
   &-card
     background-color $white
+
+@media (max-width: 1220px)
+  html body .main
+    .wrap
+      width auto
+      margin 0 20px
